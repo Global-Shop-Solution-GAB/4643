@@ -1,0 +1,2371 @@
+Program.Sub.ScreenSU.Start
+Gui.Form1..create
+Gui.Form1..caption("ProNest File Selection")
+Gui.Form1..size(5235,2040)
+Gui.Form1..minx(0)
+Gui.Form1..miny(0)
+Gui.Form1..position(0,0)
+Gui.Form1..event(UnLoad,Unload)
+Gui.Form1..forecolor(0)
+Gui.Form1..BackColor(-2147483633)
+Gui.Form1..maxbutton(False)
+Gui.Form1..minbutton(False)
+Gui.Form1..mousepointer(0)
+Gui.Form1..sizeable(False)
+Gui.Form1.lblFile.create(label,"ProNest File",True,1935,255,1,200,200,True,0,Arial,8,-2147483633,0)
+Gui.Form1.lblFile.defaultvalue("")
+Gui.Form1.txtf.create(textbox,"",True,4000,300,0,200,400,False,0,Arial,8,-2147483643,1)
+Gui.Form1.txtf.defaultvalue("")
+Gui.Form1.cmdFileBrowse.create(button)
+Gui.Form1.cmdFileBrowse.caption("^")
+Gui.Form1.cmdFileBrowse.size(450,375)
+Gui.Form1.cmdFileBrowse.position(4300,355)
+Gui.Form1.cmdFileBrowse.event(Click,cmdfilebrowse_click)
+Gui.Form1.cmdFileBrowse.defaultvalue("")
+Gui.Form1.cmdLoad.create(button)
+Gui.Form1.cmdLoad.caption("Load")
+Gui.Form1.cmdLoad.size(855,375)
+Gui.Form1.cmdLoad.position(200,900)
+Gui.Form1.cmdLoad.event(Click,cmdLoad_click)
+Gui.Form1.cmdLoad.defaultvalue("")
+Gui.Form2..create
+Gui.Form2..caption("ProNest Integration")
+Gui.Form2..size(20805,8115)
+Gui.Form2..minx(0)
+Gui.Form2..miny(0)
+Gui.Form2..position(0,0)
+Gui.Form2..event(UnLoad,form2_unload)
+Gui.Form2..forecolor(0)
+Gui.Form2..BackColor(-2147483633)
+Gui.Form2..maxbutton(False)
+Gui.Form2..mousepointer(0)
+Gui.Form2..sizeable(False)
+Gui.Form2.lblNestingNo.create(label,"Nesting Number",True,1305,255,1,195,510,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblNestingNo.defaultvalue("")
+Gui.Form2.lblRawMaterial.create(label,"Raw Material",True,1080,255,1,1680,510,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblRawMaterial.defaultvalue("")
+Gui.Form2.lblTotalRun.create(label,"Total Run",True,1065,255,1,4935,510,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblTotalRun.defaultvalue("")
+Gui.Form2.lblTotallbs.create(label,"Total lbs",True,735,255,1,6120,510,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblTotallbs.defaultvalue("")
+Gui.Form2.lblLoc.create(label,"Location",True,735,255,1,3855,510,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblLoc.defaultvalue("")
+Gui.Form2.txtNestingNo.create(textbox,"",True,1215,300,0,195,780,False,0,Arial,8,-2147483643,1)
+Gui.Form2.txtNestingNo.defaultvalue("")
+Gui.Form2.txtRawMaterial.create(textbox,"",True,1995,300,0,1680,780,True,0,Arial,8,-2147483643,1)
+Gui.Form2.txtRawMaterial.event(Click,txtrawmaterial_click)
+Gui.Form2.txtRawMaterial.defaultvalue("")
+Gui.Form2.txtTotalRun.create(textbox,"",True,645,300,0,4950,780,True,1,Arial,8,-2147483643,1)
+Gui.Form2.txtTotalRun.defaultvalue("")
+Gui.Form2.txtTotalRun.NumericOnly(True)
+Gui.Form2.txtTotalRun.Event(LostFocus,txtTotalRun_LostFocus)
+Gui.Form2.txtTotalLbs.create(textbox,"",True,1215,300,0,6120,780,False,1,Arial,8,-2147483643,1)
+Gui.Form2.txtTotalLbs.defaultvalue("")
+Gui.Form2.txtLoc.create(textbox,"",True,465,300,0,3855,780,False,0,Arial,8,-2147483643,1)
+Gui.Form2.txtLoc.defaultvalue("")
+Gui.Form2.lblErrorMapping.create(label,"Error Mapping",True,1935,255,1,195,5310,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblErrorMapping.defaultvalue("")
+Gui.Form2.cmdValidate.create(button)
+Gui.Form2.cmdValidate.caption("Validate")
+Gui.Form2.cmdValidate.size(1305,555)
+Gui.Form2.cmdValidate.position(16080,5250)
+Gui.Form2.cmdValidate.event(Click,cmdvalidate_click)
+Gui.Form2.cmdValidate.defaultvalue("")
+Gui.Form2.cmdSupplyandDemand.create(button)
+Gui.Form2.cmdSupplyandDemand.caption("Supply and Demand")
+Gui.Form2.cmdSupplyandDemand.size(1305,555)
+Gui.Form2.cmdSupplyandDemand.position(19035,6120)
+Gui.Form2.cmdSupplyandDemand.enabled(False)
+Gui.Form2.cmdSupplyandDemand.event(Click,cmdsupplyanddemand_click)
+Gui.Form2.cmdSupplyandDemand.defaultvalue("")
+Gui.Form2.cmdProcess.create(button)
+Gui.Form2.cmdProcess.caption("Process")
+Gui.Form2.cmdProcess.size(1305,555)
+Gui.Form2.cmdProcess.position(17550,5250)
+Gui.Form2.cmdProcess.enabled(False)
+Gui.Form2.cmdProcess.event(Click,cmdprocess_click)
+Gui.Form2.cmdProcess.defaultvalue("")
+Gui.Form2.CmdExport.create(button)
+Gui.Form2.CmdExport.caption("Export")
+Gui.Form2.CmdExport.size(1305,555)
+Gui.Form2.CmdExport.position(19035,5250)
+Gui.Form2.CmdExport.enabled(False)
+Gui.Form2.CmdExport.event(Click,cmdexport_click)
+Gui.Form2.CmdExport.defaultvalue("")
+Gui.Form2.cmdReverse.create(button)
+Gui.Form2.cmdReverse.caption("Reverse")
+Gui.Form2.cmdReverse.size(1305,555)
+Gui.Form2.cmdReverse.position(17565,6120)
+Gui.Form2.cmdReverse.enabled(False)
+Gui.Form2.cmdReverse.event(Click,cmdreverse_click)
+Gui.Form2.cmdReverse.defaultvalue("")
+Gui.Form2.lblProNest.create(label,"ProNest",True,1935,465,1,200,50,True,0,,14,-2147483633,0)
+Gui.Form2.lblProNest.defaultvalue("")
+Gui.Form2.lblGlobalShop.create(label,"Global Shop",True,1935,390,1,10500,45,True,0,Arial,14,-2147483633,0)
+Gui.Form2.lblGlobalShop.defaultvalue("")
+Gui.Form2.lblFlexSched.create(label,"Flex Sched",True,1110,255,1,10335,510,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblFlexSched.defaultvalue("")
+Gui.Form2.txtFlexSched.create(textbox,"",True,1215,300,0,10335,780,False,0,Arial,8,-2147483643,1)
+Gui.Form2.txtFlexSched.defaultvalue("")
+Gui.Form2.lblTotalRunGSS.create(label,"Total Pcs Run",True,1350,255,1,12030,510,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblTotalRunGSS.defaultvalue("")
+Gui.Form2.txtTotalRunGSS.create(textbox,"",True,1215,300,0,12030,780,False,1,Arial,8,-2147483643,1)
+Gui.Form2.txtTotalRunGSS.defaultvalue("")
+Gui.Form2.txtTotalRunGSS.controlgroup(1)
+Gui.Form2.lblTotallbsGSS.create(label,"Total Lbs",True,1020,255,1,13650,510,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblTotallbsGSS.defaultvalue("")
+Gui.Form2.txtTotalLbsGSS.create(textbox,"",True,1215,300,0,13650,780,False,1,Arial,8,-2147483643,1)
+Gui.Form2.txtTotalLbsGSS.defaultvalue("")
+Gui.Form2.txtTotalLbsGSS.controlgroup(1)
+Gui.Form2.lblToIssue.create(label,"To Issue (Sh)",True,1125,255,1,15285,510,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblToIssue.defaultvalue("")
+Gui.Form2.txtToIssue.create(textbox,"",True,1215,300,0,15285,780,False,1,Arial,8,-2147483643,1)
+Gui.Form2.txtToIssue.defaultvalue("")
+Gui.Form2.txtToIssue.controlgroup(1)
+Gui.Form2.txtToScrap.create(textbox,"",True,1215,300,0,16950,780,False,1,Arial,8,-2147483643,1)
+Gui.Form2.txtToScrap.defaultvalue("")
+Gui.Form2.txtToScrap.controlgroup(1)
+Gui.Form2.lblToScrap.create(label,"To Scrap (Lbs)",True,1245,255,1,16950,510,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblToScrap.defaultvalue("")
+Gui.Form2.lblOnHand.create(label,"On Hand",True,825,255,1,18675,510,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblOnHand.defaultvalue("")
+Gui.Form2.txtOnHand.create(textbox,"",True,1215,300,0,18675,780,False,1,Arial,8,-2147483643,1)
+Gui.Form2.txtOnHand.defaultvalue("")
+Gui.Form2.lblError3.create(label,"1. Mismatch Required - Total Raw Material does not match ProNest Raw Material Quantity.",True,6780,255,1,195,5535,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblError3.defaultvalue("")
+Gui.Form2.lblError4.create(label,"2. Insufficient On Hand - On Hand quantity in Global Shop is not enough to supply ProNest Requirement.",True,8010,255,1,195,5805,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblError4.defaultvalue("")
+Gui.Form2.lblError6.create(label,"3. The standard type part number does not have a match in Global Shop.",True,6330,255,1,195,6060,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lblError6.defaultvalue("")
+Gui.Form2.cmdRefresh.create(button)
+Gui.Form2.cmdRefresh.caption("Refresh")
+Gui.Form2.cmdRefresh.size(1305,555)
+Gui.Form2.cmdRefresh.position(16065,6120)
+Gui.Form2.cmdRefresh.event(Click,cmdrefresh_click)
+Gui.Form2.cmdRefresh.defaultvalue("")
+Gui.Form2.lbl22.create(label,"4. Consumption Quantity Could Not Be Found For Raw Material",True,6540,255,1,195,6330,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lbl22.defaultvalue("")
+Gui.Form2.lbl23.create(label,"5. Work Order Not Found For Finished Good.",True,7290,255,1,195,6600,True,0,Arial,8,-2147483633,0)
+Gui.Form2.lbl23.defaultvalue("")
+Gui.Form2.gsgcNest.Create(GsGridControl)
+Gui.Form2.gsgcNest.Size(20160,3855)
+Gui.Form2.gsgcNest.Position(195,1200)
+Gui.Form2.gsgcNest.Event(RowCellClick,gsfgpronest_commandclick)
+Gui.Form2.cmdPrint.Create(Button)
+Gui.Form2.cmdPrint.Enabled(False)
+Gui.Form2.cmdPrint.Size(1305,555)
+Gui.Form2.cmdPrint.Position(17565,6840)
+Gui.Form2.cmdPrint.Caption("Release/Print")
+Gui.Form2.cmdPrint.Event(Click,cmdPrint_Click)
+Gui.Form2.ddlMainWO.Create(DropDownList)
+Gui.Form2.ddlMainWO.Size(1575,330)
+Gui.Form2.ddlMainWO.Position(7755,780)
+Gui.Form2.lblTotallbs2.Create(Label,"Main Work Order",True,1440,255,1,7755,510,True,0,"Arial",8,-2147483633,0)
+Gui.Form2.lblTotallbs2.DefaultValue("")
+Gui.Form3..create
+Gui.Form3..caption("Company Option Errors")
+Gui.Form3..size(12585,12810)
+Gui.Form3..minx(0)
+Gui.Form3..miny(0)
+Gui.Form3..position(0,0)
+Gui.Form3..event(UnLoad,Unload)
+Gui.Form3..forecolor(0)
+Gui.Form3..BackColor(-2147483633)
+Gui.Form3..mousepointer(0)
+Gui.Form3.lblOptionErrors.Create(Label,"Label",True,12105,12015,0,135,180,True,0,"Microsoft Sans Serif",9,-2147483633,0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.sLoc.Declare(String)
+Variable.Global.iRows.Declare(Long,0)
+Variable.Global.sRaw.Declare(String)
+Variable.Global.fTotalOnHand.Declare(Float,0.0)
+Variable.Global.fConsumption.Declare(Float,0.0)
+Variable.Global.iErrorCount.Declare(Long,0)
+Variable.Global.fScrap.Declare(Float,-1)
+Variable.Global.iSupplyDemand.Declare(Long,-1)
+Variable.Global.sIssueFlag.Declare(String,"N")
+Variable.Global.bValidate.Declare(Boolean,False)
+Variable.Global.fLbsToSheet.Declare(Float,0.0)
+Variable.Global.fSheetToLbs.Declare(Float,0.0)
+Variable.Global.fTotalOHLbs.Declare(Float,0.0)
+Variable.Global.fScrapPrime.Declare(Float,0.0)
+Variable.Global.bProcess.Declare(Boolean,False)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+'ProNext Validaiton check for Roura
+'Coded by: WAW,BCC,SKC
+'Converted to .net on 10/24/16 with the modifications for print flex schedule, change work order material to nest material, reverse material change back to router.  Added the option to change the run qty and have that update
+'line of the nest
+'Date: 6/24/2016.
+gui.Form3.lblOptionErrors.Alignment("NET1")
+
+'open the conneciton
+F.ODBC.Connection!Conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,1800)
+'disable the process button
+'Gui.Form1.cmdLoad.Enabled(False)
+'check the company options
+F.Intrinsic.Control.CallSub(Companyoptioncheck)
+'display the form if no errors founds
+F.Intrinsic.Control.If(V.Args.Errors,=,False)
+	Gui.Form1..Visible(true)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+'	f.Intrinsic.Control.CallSub
+Function.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.SetErrorHandler("Unload_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+'close connection
+F.ODBC.Connection!Conx.Close
+'end the program
+F.Intrinsic.Control.End
+
+F.Data.DateView.Close("ProNest", "Nest")
+F.Data.DataTable.Close("ProNest")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+Program.Sub.Unload.End
+
+Program.Sub.CompanyOptionCheck.Start
+F.Intrinsic.Control.SetErrorHandler("CompanyOptionCheck_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.ssql.Declare(String)
+V.Local.smsgline.Declare(String)
+V.Local.smsgfinal.Declare(String)
+V.Local.bErrors.Declare(Boolean,False)
+'get the user's location
+
+F.Intrinsic.string.Build("Select Text1 from USER_OPTIONS where ID = '{0}' and Option_ID = '{1}' and Seq = '0001'",V.Caller.User,"000014",V.Local.ssql)
+F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+'if end of file is false, set the global sloc variable as the location
+F.Intrinsic.Control.If(V.ODBC.Conx!rst.EOF,=,False)
+	V.Global.sLoc.Set(V.ODBC.Conx!rst.FieldValTrim!Text1)
+F.Intrinsic.Control.EndIf
+'close the rst connection
+F.ODBC.Conx!rst.Close
+'check the company options and compile a list of all the company options that are not turned on
+F.Intrinsic.String.Build("Select F_Boolean, ID from V_OP_HEADER where ID = '{0}' or ID = '{1}' or ID = '{2}'","401219","060001","401705",V.Local.ssql)
+F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+'do until eof is true
+F.Intrinsic.Control.DoUntil(V.ODBC.conX!rst.EOF,=,True)
+	'check to see if the the options are checked
+	F.Intrinsic.Control.If(V.ODBC.Conx!rst.FieldValTrim!F_Boolean,=,"0")
+		'check what the ID is and build the msg
+		'COGS option
+		F.Intrinsic.Control.If(V.ODBC.Conx!rst.FieldValTrim!ID,=,"401219")
+			'write the message line
+			V.Local.smsgline.Set("Track COGS Option: System Support -> Administration -> Company Options (Standard) -> Inventory Accounting Options -> Manufacturing -> Track Cost of Goods Sold")
+			'see if there has already been a msg line written
+			F.Intrinsic.Control.If(V.Local.smsgfinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{1}{2}",V.Local.smsgfinal,V.Ambient.NewLine,V.Local.smsgline,V.Local.smsgfinal)
+			F.Intrinsic.Control.Else
+				V.Local.smsgfinal.Set(V.Local.smsgline)
+			F.Intrinsic.Control.EndIf
+		'Release Job option
+		F.Intrinsic.Control.ElseIf(V.ODBC.Conx!rst.FieldValTrim!ID,=,"060001")
+			'write the message line
+			V.Local.smsgline.Set("Release Job Option: System Support -> Administration -> Company Options (Standard) -> Online -> Work Orders Must Be Released to the Floor")
+			'see if there has already been a msg line written
+			F.Intrinsic.Control.If(V.Local.smsgfinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{1}{2}",V.Local.smsgfinal,V.Ambient.NewLine,V.Local.smsgline,V.Local.smsgfinal)
+			F.Intrinsic.Control.Else
+				V.Local.smsgfinal.Set(V.Local.smsgline)
+			F.Intrinsic.Control.EndIf
+		'Close COG's WO when run Qty shipped
+		F.Intrinsic.Control.ElseIf(V.ODBC.Conx!rst.FieldValTrim!ID,=,"401705")
+			'write the message line
+			V.Local.smsgline.Set("Close COGS Option: System Support -> Administration -> Company Options (Advanced) -> Order Entry -> Close COG's WO When Run Qty Shipped")
+			'see if there has already been a msg line written
+			F.Intrinsic.Control.If(V.Local.smsgfinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{1}{2}",V.Local.smsgfinal,V.Ambient.NewLine,V.Local.smsgline,V.Local.smsgfinal)
+			F.Intrinsic.Control.Else
+				V.Local.smsgfinal.Set(V.Local.smsgline)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	'move to the next record
+	F.ODBC.conx!rst.MoveNext
+Function.Intrinsic.Control.Loop
+V.Local.ssql.Set("select Text1 from OP_HEADER Where ID = '401787'")
+F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstGL",V.Local.ssql)
+F.Intrinsic.Control.If(V.ODBC.Conx!rstGL.FieldValTrim!Text1,=,"")
+	V.Local.smsgline.Set("Quality GL Account Option: System Support -> Administration -> Company Options (Advanced) -> Miscellaneous -> Quality Options -> Return Variance Account")
+	F.Intrinsic.Control.If(V.Local.smsgfinal,<>,"")
+		F.Intrinsic.String.Build("{0}{1}{1}{2}",V.Local.smsgfinal,V.Ambient.NewLine,V.Local.smsgline,V.Local.smsgfinal)
+	F.Intrinsic.Control.Else
+		V.Local.smsgfinal.Set(V.Local.smsgline)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstGL.Close
+'check to see if any of the options were note turned on, if so inform the user and close the program
+F.Intrinsic.Control.If(V.Local.smsgfinal,<>,"")
+	'build the final message to the user
+	F.Intrinsic.String.Build("{0}{1}{1}{1}{2}{3}{3}{3}{4}","The following options are not turned on:",V.ambient.newline,V.Local.smsgfinal,V.Ambient.NewLine,"The program cannot continue until options have been activated",V.Local.smsgfinal)
+	Gui.Form3.lblOptionErrors.Caption(V.Local.smsgfinal.trim)
+	V.Local.bErrors.Set(True)
+	Gui.Form3..Show
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Variable.AddRV("Errors",V.Local.bErrors)
+'close the rst connection
+F.ODBC.Conx!rst.Close
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("CompanyOptionCheck_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.CompanyOptionCheck.End
+
+Program.Sub.cmdfilebrowse_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdfilebrowse_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+Variable.Local.sFile.Declare(String)
+Variable.Local.sDir.Declare(String)
+V.Local.ssql.Declare(String)
+V.Local.irow.Declare(Long)
+V.Local.i.Declare(Long)
+V.Local.srow.Declare(String)
+V.Local.scol.Declare(String)
+V.Local.sloc.Declare(String)
+'build the file directory
+F.Intrinsic.String.Build("{0}\Select File",V.Caller.FilesDir,V.Local.sDir)
+'open file dialog
+Function.Intrinsic.UI.ShowOpenFileDialog("","",Variable.Local.sDir,Variable.Local.sFile)
+Function.Intrinsic.Control.If(Variable.Local.sFile,<>,"***CANCEL***")
+	Gui.Form1.txtf.Text(V.Local.sFile)
+'otherwise inform the user no file was selected
+F.Intrinsic.Control.Else
+	'show message box
+	F.Intrinsic.UI.Msgbox("No ProNest file was selected.")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdfilebrowse_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdfilebrowse_click.End
+
+Program.Sub.cmdLoad_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdload_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sfile.Declare(String)
+V.Local.scol.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.srow.Declare(String)
+V.Local.irow.Declare(Long)
+V.Local.ftotalruns.Declare(Float,0)
+V.Local.ftotallbs.Declare(Float,0)
+V.Local.sret.Declare(String)
+V.Local.fLbs.Declare(Float,0)
+V.Local.bbuildstyle.Declare(Boolean,False)
+V.Local.ssql.Declare(String)
+v.Local.sTitle.Declare(String)
+v.Local.sType.Declare(String)
+v.Local.sFilter.Declare(String)
+v.Local.sTemp.Declare(String)
+'close the first form
+Gui.Form1..Visible(false)
+Gui.Form2.cmdSupplyandDemand.Enabled(True)
+Gui.Form2.cmdValidate.SetFocus
+'invoke the wait dialog
+F.Intrinsic.UI.InvokeWaitDialog("Generating Data...")
+'get the name of the file
+V.Local.sfile.Set(V.Screen.Form1!txtf.Text)
+'read the spreadsheet
+F.Automation.MSExcel.ReadSpreadsheet(V.Local.sFile,V.Local.sFile)
+
+F.Intrinsic.String.Split(v.Local.sfile, "$!$", v.Local.sTemp)
+F.Intrinsic.Variable.PopArray(v.Local.sTemp, v.Local.sTemp)
+F.Intrinsic.Variable.PopArray(v.Local.sTemp, v.Local.sTemp)
+F.Intrinsic.String.Join(v.Local.sTemp, "$!$", v.Local.sfile)
+'delete the last blank row that the readspredsheet function generates for some reason
+F.Intrinsic.String.Split(V.Local.sfile, "$!$*!**!*", V.Local.sfile)
+
+'Need to update to DataTable
+v.Local.sTitle.Set("JobNumber*!*NestNumber*!*Runs*!*Part*!*PartWeight*!*QtyNestOrig*!*Remark1*!*RawMaterial*!*Material*!*PlateThick*!*PlateWidth*!*PlateLength*!*PlateWeight*!*PerUse*!*DoNotUse")
+'v.Local.sType.Set("String*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String")
+v.Local.sType.Set("String*!*String*!*Float*!*String*!*Float*!*Float*!*String*!*String*!*String*!*Float*!*Float*!*Float*!*Float*!*Float*!*String")
+F.Data.DataTable.CreateFromString("ProNest",v.Local.sfile,v.Local.sTitle, v.Local.sType,"*!*", "$!$",True)
+v.Local.sFilter.Set("JobNumber <> 'Job Name' AND JobNumber <> ' '")
+F.Data.DataView.Create("ProNest", "Nest", 22, v.Local.sFilter, "JobNumber Asc")
+F.Data.DataTable.AddColumn("ProNest", "Type", "String")
+F.Data.DataTable.AddColumn("ProNest", "Remark", "String")
+F.Data.DataTable.AddColumn("ProNest", "WO#", "String")
+F.Data.DataTable.AddColumn("ProNest", "Error", "String")
+F.Data.DataTable.AddColumn("ProNest", "RunQty", "Float")
+F.Data.DataTable.AddColumn("ProNest", "RMQtyLb", "Float")
+F.Data.DataTable.AddColumn("ProNest", "RMQtySh", "Float")
+F.Data.DataTable.AddColumn("ProNest", "RMIssueSh", "Float")
+F.Data.DataTable.AddColumn("ProNest", "ScrapCalc", "Float")
+F.Data.DataTable.AddColumn("ProNest", "RemainingOnHand", "Float")
+F.Data.DataTable.AddColumn("ProNest", "WOSeq", "String")
+F.Data.DataTable.AddColumn("ProNest", "QtyNest", "Float")
+F.Data.DataTable.AddColumn("ProNest", "UserID", "String")
+F.Data.DataTable.AddColumn("ProNest", "DateExport", "Date")
+F.Data.DataTable.AddColumn("ProNest", "IssueMatFlag", "String")
+F.Data.DataTable.AddColumn("ProNest", "NestNum", "String")
+F.Data.DataView.SetValue("ProNest", "Nest", -1, "IssueMatFlag", "Y")
+'set the screens textboxes as the values from the spreadsheet
+'check to make sure that ProNest file has not been processed before
+F.Intrinsic.Control.CallSub(Pronest_check)
+
+'SLKLKSD
+F.Data.Dataview.SetValue("ProNest", "Nest", -1, "JobNumber", v.Screen.Form2!txtFlexSched.Text)
+'set the Global Shop Flex Sched
+Gui.Form2.txtRawMaterial.Text(V.DataView.ProNest!Nest(0).RawMaterial!FieldVal)
+F.Intrinsic.String.Build("SELECT QTY_ONHAND FROM INVENTORY_MSTR WHERE PART = '{0}' AND LOCATION = '{1}'",V.DataView.ProNest!Nest(0).RawMaterial!FieldVal,V.Global.sLoc.Trim,V.Local.ssql)
+F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstRaw",V.Local.ssql)
+'If the part is found, set on hand quantity, otherwise qty on hand will be zero.
+F.Intrinsic.Control.If(V.ODBC.Conx!rstRaw.EOF,<>,True)
+	V.Global.fTotalOnHand.Set(V.ODBC.Conx!rstRaw.FieldValFloat!QTY_ONHAND)
+	Gui.Form2.txtOnHand.Text(V.Global.fTotalOnHand)
+	F.Intrinsic.Math.Mult(V.Global.fTotalOnHand, V.Global.fSheetToLbs, V.Global.fTotalOHLbs)
+'F.Intrinsic.Debug.InvokeDebugger
+
+'F.Intrinsic.Debug.Stop
+
+F.Intrinsic.Control.EndIf
+F.ODBC.ConX!rstRaw.Close
+F.Intrinsic.String.Build("SELECT CONSUMP_CONV FROM INVENTORY_MST3 WHERE PART = '{0}' AND LOCATION = '{1}'",V.DataView.ProNest!Nest(0).RawMaterial!FieldVal,V.Global.sLoc.Trim,V.Local.ssql)
+F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstCons",V.Local.ssql)
+'Set consumption percent if part is found
+F.Intrinsic.Control.If(V.ODBC.Conx!rstCons.EOF,<>,True)
+	V.Global.fConsumption.Set(V.ODBC.Conx!rstCons.FieldValFloat!CONSUMP_CONV)
+	V.Global.fSheetToLbs.Set(V.ODBC.Conx!rstCons.FieldValFloat!CONSUMP_CONV)
+	F.Intrinsic.Math.Div(1, V.Global.fSheetToLbs, V.Global.fLbsToSheet)
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstCons.Close
+F.Intrinsic.Control.If(V.Global.fScrap,<,0)
+	F.Intrinsic.Math.Sub(100,V.DataView.ProNest!Nest(0).PerUse!FieldVal,V.Global.fScrap)
+	'It was in percent, divide by 100 to get sheets
+	F.Intrinsic.Math.Div(V.Global.fScrap,100,V.Global.fScrap)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.For(V.Local.i,0,V.DataView.ProNest!Nest.RowCount--,1)
+	v.Local.sTemp.Set(V.DataView.ProNest!Nest(v.Local.i).Part!FieldValTrim)
+	F.Intrinsic.String.Left(v.Local.sTemp,20, v.Local.sTemp)
+	F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "Part", v.Local.sTemp)
+	F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "Remark", "Edit")
+	F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "QtyNest", V.DataView.ProNest!Nest(v.Local.i).QtyNestOrig!FieldValFloat)
+	'Check to make sure that the raw material is in global shop, otherwise add the error to every row.
+'	F.Intrinsic.Control.CallSub(Error_mismatchraw,"Row",V.Local.i)
+		'see if it is a custom part or not
+	F.Intrinsic.string.Left(V.DataView.ProNest!Nest(v.Local.i).Part!FieldVal,2,V.Local.sret)
+	'if its a custom put "CUSTOM"
+	F.Intrinsic.Control.if(V.Local.sret,=,"C1")
+		F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "Type", "Custom")
+	F.Intrinsic.Control.ElseIf(V.Local.sret, =, "C2")
+		F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "Type", "Custom")
+	F.Intrinsic.Control.Else
+		'otherwise put standard
+		F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "Type", "Standard")
+		'see if the standard part is valid in GSS
+		F.Intrinsic.Control.CallSub(Error_missingcomp,"Part",V.DataView.ProNest!Nest(v.Local.i).Part!FieldVal,"Row",V.Local.i)
+	F.Intrinsic.Control.EndIf
+		'add all the lbs together, but first multiply the lbs by the run qty
+	F.Intrinsic.Math.Mult(V.DataView.ProNest!Nest(v.Local.i).PartWeight!FieldValFloat,V.DataView.ProNest!Nest(v.Local.i).QtyNestOrig!FieldValFloat,V.Local.fLbs)
+	F.Intrinsic.Math.Add(V.Local.ftotallbs,V.Local.fLbs,V.Local.ftotallbs)
+		'add all the runs together
+'	F.Intrinsic.Math.Add(V.Local.ftotalruns,V.DataView.ProNest!Nest(v.Local.i).QtyNestOrig!FieldValFloat,V.Local.ftotalruns)
+	'Check to make sure that there is enough on hand quantity in global shop to meet pronest requirements
+	F.Intrinsic.Control.CallSub(Error_zeroconsump,"Row",V.Local.i)
+F.Intrinsic.Control.Next(V.Local.i)
+'set the total runs and total lbs and location
+F.Intrinsic.Math.Round(V.Local.fTotalLbs, 4, V.Local.fTotalLbs)
+Gui.Form2.txtTotalLbs.Text(V.Local.ftotallbs)
+Gui.Form2.txtTotalRun.Text("1")
+Gui.Form2.txtLoc.Text(V.Global.sLoc)
+v.Local.sFilter.set("[QtyNest] * [PartWeight]")
+F.Data.DataTable.AddExpressionColumn("ProNest", "CalcPartWeight", "Float", v.Local.sFilter)
+'Check to make sure that there is a job that has a router that equals the component part
+
+
+F.Intrinsic.Control.CallSub(Marchmods)
+F.Intrinsic.Control.CallSub(Buildstyle)
+F.Intrinsic.UI.CloseWaitDialog
+
+Gui.Form2..Show
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdload_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdLoad_click.End
+
+Program.Sub.form2_unload.Start
+F.Intrinsic.Control.SetErrorHandler("form2_unload_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+F.ODBC.Connection!Conx.Close
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("form2_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+Program.Sub.form2_unload.End
+
+Program.Sub.Buildstyle.Start
+F.Intrinsic.Control.SetErrorHandler("Buildstyle_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+Gui.Form2.gsgcNest.AddGridViewFromDataView("GridNest", "ProNest", "Nest")
+Gui.Form2.gsgcNest.MainView("GridNest")
+Gui.Form2.gsgcNest.SetGridViewProperty("GridNest", "ReadOnly", True)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Type", "VisibleIndex", "0")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Part", "VisibleIndex", "1")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","QtyNest", "VisibleIndex", "2")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","CalcPartWeight", "VisibleIndex", "3")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Error", "VisibleIndex", "4")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Remark", "VisibleIndex", "6")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","WO#", "VisibleIndex", "7")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RunQty", "VisibleIndex", "8")
+'Added by FEQ March 2017
+'Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RmQtyLb", "VisibleIndex", "9")
+'Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RmQtySh", "VisibleIndex", "10")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest", "ISHDISP", "VisibleIndex", "9")
+'Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RmIssueSh","VisibleIndex", "9")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","ScrapCalc", "VisibleIndex", "10")
+'Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RemainingOnHand", "VisibleIndex", "11")
+'Gui.Form2.gsgcNest.SetColumnProperty("GridNest","DoNotUse", "VisibleIndex", "12")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","JobNumber", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","ISH", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","NestNumber", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Runs", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","PartWeight", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","QtyNestOrig", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Remark1", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RawMaterial", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Material", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","PlateThick", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","PlateWidth", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","PlateLength", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","PlateWeight", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","PerUse", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","WOSeq", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","UserID", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","DateExport", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","IssueMatFlag", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","NestNum", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","ISHDISPPP","Visible", False)
+'added by FEQ March 8 2017
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RmQtyLb", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RmQtySh", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RmIssueSh","Visible", False)
+'Gui.Form2.gsgcNest.SetColumnProperty("GridNest", "ISH", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest", "DoNotUse", "Visible", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest", "RemainingOnHand", "Visible", False)
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","CalcPartWeight", "CellHAlignment", "Far")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Remark", "CellHAlignment", "Center")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Remark", "AllowEdit", False)
+Gui.Form2.gsgcNest.ColumnEdit("GridNest", "Remark", "EditorButton", "Edit")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Remark", "Width", 50)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","WO#", "AllowEdit", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","WO#", "CellForeColor", v.Color.SEC-GSS-02)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Part", "AllowEdit", False)
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Part", "Caption", "Component Desc")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","QtyNest", "Caption", "Run Qty")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","CalcPartWeight", "Caption", "Raw Material Qty(Lb)")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","Remark", "Caption", "Edit")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","DoNotUse", "Caption", " ")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RunQty", "Caption", "WO Qty")
+'Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RmQtyLb", "Caption", "RM Qty(Lb)")
+'Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RmQtySh", "Caption", "RM Qty(Sh)")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest", "ISHDISP", "Caption", "RM Issue(Sh)")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest", "ISHDISP", "DisplayCustomNumeric", "#####.00000")
+'Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RmIssueSh", "Caption", "RM Issue(Sh)")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","ScrapCalc", "Caption", "Scrap Calc")
+Gui.Form2.gsgcNest.SetColumnProperty("GridNest","RemainingOnHand", "Caption", "Remaining On Hand")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Buildstyle_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Buildstyle.End
+
+Program.Sub.cmdsupplyanddemand_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdsupplyanddemand_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sParams.Declare(String)
+V.Local.sLoc.Declare(String)
+'Launch supply and demand for the Grid
+F.Intrinsic.Control.If(V.Global.iSupplyDemand,!=,-1)
+	v.Local.sPart.Set(V.DataView.ProNest!Nest(V.Global.iSupplyDemand).Part!FieldVal)
+F.Intrinsic.Control.Else
+	'else for the Raw material
+	V.Local.sPart.Set(V.Screen.Form2!txtRawMaterial.Text)
+F.Intrinsic.Control.EndIf
+V.Local.sLoc.Set(V.Screen.Form2!txtLoc.Text)
+F.Intrinsic.String.Build("{0}!*!{1}",V.Local.sPart,V.Local.sLoc,V.Local.sParams)
+F.Global.General.CallWrapperSync(300010,V.Local.sParams)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdsupplyanddemand_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdsupplyanddemand_click.End
+
+Program.Sub.cmdissuemat_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdissuemat_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sItemData.Declare(String)
+V.Local.sLineData.Declare(String)
+V.Local.sFileName.Declare(String)
+V.Local.sFileData.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sWholePart.Declare(String)
+V.Local.sQty.Declare(String)
+V.Local.sWorkOrder.Declare(String)
+V.Local.sIssueLine.Declare(String)
+V.Local.sIssueItemData.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iCount.Declare(Long)
+V.Local.iRowCount.Declare(Long)
+V.Local.bRet.Declare(Boolean)
+V.Local.fIssueQty.Declare(Float)
+V.Local.iScrap.Declare(Long)
+V.Local.sBIN.Declare(String)
+V.Local.sHeat.Declare(String)
+V.Local.sSerial.Declare(String)
+V.Local.sLot.Declare(String)
+V.Local.fScrap.Declare(Float)
+V.Local.fTotalIssue.Declare(Float)
+v.Local.fIssuseToJob.Declare(Float)
+V.Local.fRuns.Declare(Float)
+V.Local.sParams.Declare(String)
+V.Local.sPart.Redim(0,1)
+V.Local.sQty.Redim(0,1)
+V.Global.sIssueFlag.Set("Y")
+'Gui.Form2.cmdIssueMat.Enabled(False)
+'Gui.Form2.cmdReverse.Enabled(False)
+'CallWrapper 450100 - Issue Material to Job from File
+'File Layout is Tab Delimited:
+'File Name:  Z@@@IssMat.txt
+
+F.Intrinsic.Debug.Stop
+
+F.Intrinsic.String.Build("{0}\L{1}{2}MOPEN.txt",V.Caller.FilesDir,v.Caller.CompanyCode,V.Caller.Terminal,V.Local.sFileName)
+'Looping through UDT
+F.Intrinsic.Control.For(V.Local.iCount,0,V.DataView.ProNest!Nest.RowCount--,1)
+	F.Intrinsic.String.RPad(V.DataView.ProNest!Nest(v.local.iCount).RawMaterial!FieldVal," ",20,V.Local.sWholePart)
+	'Changed since they do not use rev
+'	F.Intrinsic.String.Left(V.Local.sWholePart,17,V.Local.sPart(0))
+'	F.Intrinsic.String.Right(V.Local.sWholePart,3,V.Local.sPart(1))
+	'Work Order
+	F.Intrinsic.String.Split(V.DataView.ProNest!Nest(v.local.iCount).WO#!FieldVal,"-",V.Local.sWorkOrder)
+	'Get the amount to issue
+	
+	'This line will issue material in EA
+	v.Local.fIssueQty.Set(V.DataView.ProNest!Nest(v.local.iCount).ISH!FieldVal)
+	
+	'This line will issue material in LB
+'	v.Local.fIssueQty.Set(V.DataView.ProNest!Nest(v.local.iCount).CalcPartWeight!FieldVal)
+
+	'Issue quantity should be what is on the RMIssueSh column
+'	V.Local.fIssueQty.Set(V.DataView.ProNest!Nest(V.Local.iCount).RMIssueSH!FieldVal)
+
+'	F.Intrinsic.Math.Div(V.DataView.ProNest!Nest(v.local.iCount).CalcPartWeight!FieldVal,V.Global.fConsumption,V.Local.fIssueQty)
+'	F.Intrinsic.Math.Mult(V.DataView.ProNest!Nest(v.local.iCount).QtyNest!FieldVal,V.Local.fIssueQty,V.Local.fIssueQty)
+	F.Intrinsic.Math.Round(V.Local.fIssueQty,4,V.Local.fIssueQty)
+	V.Local.fTotalIssue.Set(V.Local.fIssueQty)
+	'Get total issue qty to job
+'	F.Intrinsic.Math.Add(V.Local.fTotalIssue,V.Local.fIssueQty,V.Local.fTotalIssue)
+	F.Intrinsic.String.Build("{0},{1},{2},{3},",V.Local.sWholePart,"   ",V.Global.sLoc.Trim,V.Local.fTotalIssue,V.Local.sLineData)
+	'check for item Master Records
+	F.Intrinsic.String.Build("Select Lot, Bin,Heat, Serial_Number from Item_Master where Part = '{0}' and Location = '{1}' and Quantity >= '{2}'",V.DataView.ProNest!Nest(v.local.iCount).RawMaterial!FieldValTrim,V.Global.sLoc,V.Local.fIssueQty,V.Local.sSql)
+	F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstItem",V.Local.sSql)
+	'Create line
+	F.Intrinsic.Control.If(V.ODBC.Conx!rstItem.EOF,=,False)
+		V.Local.sLot.Set(V.ODBC.Conx!rstItem.FieldValTrim!Lot)
+		V.Local.sBIN.Set(V.ODBC.Conx!rstItem.FieldValTrim!Bin)
+		V.Local.sHeat.Set(V.ODBC.Conx!rstItem.FieldValTrim!Heat)
+		V.Local.sSerial.Set(V.ODBC.Conx!rstItem.FieldValTrim!Serial_Number)
+	
+'		F.Intrinsic.String.Build("{0},{1},{2},{3},",V.ODBC.Conx!rstItem.FieldValTrim!Lot,V.ODBC.Conx!rstItem.FieldValTrim!Bin,V.ODBC.Conx!rstItem.FieldValTrim!Heat,V.ODBC.Conx!rstItem.FieldValTrim!Serial_Number,V.Local.sItemData)
+'		F.Intrinsic.String.Build("{0},{1},{2},{3},",V.ODBC.Conx!rstItem.FieldValTrim!Lot,V.ODBC.Conx!rstItem.FieldValTrim!Bin,V.ODBC.Conx!rstItem.FieldValTrim!Heat,V.ODBC.Conx!rstItem.FieldValTrim!Serial_Number,V.Local.sIssueItemData)
+		F.Intrinsic.String.Build("{0},{1},{2},{3},",V.Local.sLot,V.Local.sBIN, V.Local.sHeat, V.Local.sSerial, V.Local.sIssueItemData)
+	F.Intrinsic.Control.Else
+		V.Local.sItemData.set(",,,,")
+		V.Local.sIssueItemData.Set(",,,,")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conx!rstItem.Close
+	
+	F.Intrinsic.String.Build("{0}{1}{2},{3},{4}",V.Local.sLineData,V.Local.sIssueItemData,V.Local.sWorkOrder(0).Trim,V.Local.sWorkOrder(1).Trim,V.DataView.ProNest!Nest(v.local.iCount).WOSeq!FieldVal,V.Local.sItemData)
+	F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sFileData,V.Local.sItemData,V.Ambient.NewLine,V.Local.sFileData)
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sFileData)
+F.Intrinsic.String.Build("L{0}{1}MOPEN.txt", V.Caller.CompanyCode,V.Caller.Terminal, V.Local.sFileName)
+
+'F.Intrinsic.String.Build("{0}!*!", V.Local.sFileName, V.Local.sParams)
+'F.Intrinsic.String.Build("{0}{1}!*!NS", V.Local.sParams, V.Local.sFileData, V.Local.sParams)
+F.Intrinsic.String.Build("{0}!*!{1}!*!NS", V.Local.sFileName, V.Local.sFileData, V.Local.sParams)
+'F.Intrinsic.String.Build("{0}!*!!*!NS", V.Local.sFileName, V.Local.sParams)
+
+'This callwrapper issues material to the work order
+F.Global.General.CallWrapperSync(450100, V.Local.sParams)
+
+'Undo the Stand Alone Issue
+F.Intrinsic.String.RPad(V.DataView.ProNest!Nest(0).RawMaterial!FieldVal," ",20,V.Local.sWholePart)
+'changes since they do not use rev
+'F.Intrinsic.String.Left(V.Local.sWholePart,17,V.Local.sPart(0))
+'F.Intrinsic.String.Right(V.Local.sWholePart,3,V.Local.sPart(1))
+'Get the Ceiling in order to calculate the actual scrap
+F.Intrinsic.Math.Ceiling(V.Local.fTotalIssue,V.Local.iScrap)
+'Subtract this value from the issue quantity to get the amount needed to get to the next whole number
+F.Intrinsic.Math.Sub(V.Local.iScrap,V.Local.fTotalIssue,V.Local.fScrap)
+
+V.Local.fScrap.Set(V.DataView.ProNest!Nest(V.DataView.Pronest!Nest.RowCount--).SCRAPCALC!FieldValFloat)
+F.Intrinsic.Math.Round(V.Local.fScrap, 4, V.Local.fScrap)
+V.Local.fRuns.Set(V.Screen.Form2!txtTotalRun.Text)
+F.Intrinsic.Math.Mult(V.Local.fRuns, V.Local.fScrap, V.Local.fScrap)
+F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{6},{7},{8},",V.Local.sWholePart,"",V.Global.sLoc.Trim,V.Local.fScrap,v.Screen.Form2!txtFlexSched.Text,V.Local.sLot, V.Local.sBIN, V.local.sHeat, V.local.sSerial,V.Local.sIssueLine)
+F.Intrinsic.String.Build("{0}I,N,,",V.Local.sIssueLine,V.Local.sIssueLine)
+'check to see if item master part
+F.Intrinsic.String.Build("{0}\{1}StandIss.txt",V.Caller.FilesDir,V.Caller.CompanyCode,V.Local.sFileName)
+F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sIssueLine)
+F.Intrinsic.String.Build("{0}StandIss.txt",V.Caller.CompanyCode,V.Local.sFileName)
+F.Intrinsic.Task.LaunchGSSSync("WIR104/NF","-C",V.Local.sFileName)
+F.Data.DataView.SetValue("ProNest", "Nest", -1, "IssueMatFlag", "Y")
+'Gui.Form2.cmdReverseIssue.Enabled(True)
+'Gui.Form2.CmdExport.Enabled(True)
+
+F.Intrinsic.Control.CallSub(partscompleted)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdissuemat_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdissuemat_click.End
+
+Program.Sub.cmdexport_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdexport_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+v.Local.sMap.Declare(String)
+V.Local.dDate.Declare(Date)
+'V.Local.dDate.Set(V.Ambient.Date)
+''Lock the Reverse Issue button since this Export signifies it is done.
+'Gui.Form2.cmdReverseIssue.Enabled(False)
+F.Data.Dataview.SetValue("ProNest", "Nest", -1, "JobNumber", v.Screen.Form2!txtFlexSched.Text)
+F.Data.DataView.SetValue("ProNest", "Nest", -1, "NestNum", v.Screen.Form2!txtFlexSched.Text)
+F.Data.DataView.SetValue("ProNest", "Nest", -1, "UserID", v.Caller.User)
+V.Local.dDate.Set(v.Ambient.Date)
+F.Data.DataView.SetValue("ProNest", "Nest", -1, "DateExport", v.Local.dDate.PervasiveDate)
+''Save to table
+v.Local.sMap.Set("JobNumber@!@ProNest_Num*!*Runs@!@Runs*!*PartWeight@!@PartWeight*!*QtyNest@!@QtyNest*!*RawMaterial@!@RawMaterial*!*PlateLength@!@PlateLen*!*PlateThick@!@PlateThick*!*PlateWeight@!@PlateWeight*!*PerUse@!@PercentUse")
+F.Intrinsic.String.Build("{0}*!*Type@!@Type*!*WO#@!@WorkOrder*!*RunQty@!@RunQty*!*RMQtyLb@!@RMQtyLbs*!*RMQtySh@!@RMQtySh*!*ScrapCalc@!@RMScrap*!*RemainingOnHand@!@RMQtyOnHand*!*RMIssueSh@!@RMIssue", v.Local.sMap, v.Local.sMap)
+F.Intrinsic.String.Build("{0}*!*WOSeq@!@WOSequence*!*Part@!@Component*!*Material@!@Mat*!*JobNumber@!@NestNum*!*UserID@!@UserID*!*DateExport@!@DateExport*!*IssueMatFlag@!@IssueMatFlag", v.Local.sMap, v.Local.sMap)
+F.Data.DataTable.SaveToDB("ProNest", "conx", "GCG_4138_ProNest", "JobNumber",256, v.Local.sMap) 
+F.Intrinsic.UI.Msgbox("Export Complete!","Save Successful")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdexport_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdexport_click.End
+
+Program.Sub.cmdreverse_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdreverse_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sJob.Declare(String)
+'Update process boolean
+V.Global.bProcess.Set(False)
+
+F.Intrinsic.Control.CallSub(cmdreverseissue_click)
+V.Local.sJob.Set(V.Screen.Form2!txtFlexSched.Text)
+F.Intrinsic.String.Split(V.Local.sJob,"-",V.Local.sJob)
+V.Local.sJob.RedimPreserve(0,1)
+Gui.Form2.cmdReverse.Enabled(False)
+'Gui.Form2.cmdIssueMat.Enabled(False)
+Gui.Form2.CmdExport.Enabled(False)
+F.Intrinsic.String.Build("Delete From Job_CT_FLX_Schd where Schedule = '{0}' and Schedule_Suffix = '{1}'",V.Local.sJob(0),V.Local.sJob(1),V.Local.sSql)
+F.ODBC.Connection!Conx.Execute(V.Local.sSql)
+F.Intrinsic.Control.CallSub(cmdroutermaterial_click)
+Gui.Form2.cmdProcess.Enabled(True)
+Gui.Form2.cmdRefresh.Enabled(True)
+Gui.Form2.cmdPrint.Enabled(False)
+'Gui.Form2.cmdRouterMaterial.Enabled(True)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdreverse_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdreverse_click.End
+
+Program.Sub.cmdreverseissue_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdreverseissue_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sFileName.Declare(String)
+V.Local.sReverseData.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.sTime.Declare(String)
+V.Local.sWorkOrder.Declare(String)
+V.Local.sHour.Declare(String)
+V.Local.sMinutes.Declare(String)
+V.Local.sSeconds.Declare(String)
+V.Local.sIssueLine.Declare(String)
+V.Local.sIssueItemData.Declare(String)
+V.Local.sWholePart.Declare(String)
+V.Local.fQty.Declare(Float)
+V.Local.sRet.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sLineData.Declare(String)
+V.Local.sItemData.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sFileData.Declare(String)
+V.Local.iCount.Declare(Long)
+V.Local.bRet.Declare(Boolean)
+V.Local.fIssueQty.Declare(Float)
+V.Local.fTotalIssue.Declare(Float)
+V.Local.iScrap.Declare(Long)
+V.Local.fScrap.Declare(Float)
+V.Local.fRuns.Declare(Float)
+V.Global.sIssueFlag.Set("N")
+'Gui.Form2.cmdReverseIssue.Enabled(False)
+'Gui.Form2.CmdExport.Enabled(False)
+V.Local.sPart.Redim(0,1)
+
+'F.Intrinsic.Debug.Stop
+
+F.Intrinsic.String.Build("{0}\L{1}{2}MOPEN.txt",V.Caller.FilesDir,v.Caller.CompanyCode,V.Caller.Terminal,V.Local.sFileName)
+F.Intrinsic.String.Format(V.Ambient.Date,"YYYYMMDD",V.Local.sDate)
+'Undo the Issue Material
+F.Intrinsic.Control.For(V.Local.iCount,0,V.DataView.ProNest!Nest.RowCount--,1)
+	F.Intrinsic.String.RPad(V.DataView.ProNest!Nest(v.local.iCount).RawMaterial!FieldVal," ",20,V.Local.sWholePart)
+	'changed since they do not use rev
+'	F.Intrinsic.String.Left(V.Local.sWholePart,17,V.Local.sPart(0))
+'	F.Intrinsic.String.Right(V.Local.sWholePart,3,V.Local.sPart(1))
+	'Get the amount that was issued
+	v.Local.fIssueQty.Set(V.DataView.ProNest!Nest(v.local.iCount).ISH!FieldVal)
+'	F.Intrinsic.Math.Div(V.DataView.ProNest!Nest(v.local.iCount).CalcPartWeight!FieldValFloat,V.Global.fConsumption,V.Local.fIssueQty)
+'	F.Intrinsic.Math.Mult(V.DataView.ProNest!Nest(v.local.iCount).QtyNest!FieldValFloat,V.Local.fIssueQty,V.Local.fIssueQty)
+	F.Intrinsic.Math.Round(V.Local.fIssueQty,4,V.Local.fIssueQty)
+	V.Local.fTotalIssue.Set(V.Local.fIssueQty)
+	'Get total quantity that's been issued
+'	F.Intrinsic.Math.Add(V.Local.fTotalIssue,V.Local.fIssueQty,V.Local.fTotalIssue)
+	F.Intrinsic.Math.Mult(-1,V.Local.fIssueQty,V.Local.fQty)
+	'Work Order
+	F.Intrinsic.String.Split(V.DataView.ProNest!Nest(v.local.iCount).WO#!FieldVal,"-",V.Local.sWorkOrder)
+	F.Intrinsic.String.Build("{0},{1},{2},{3},",V.Local.sWholePart,"",V.Global.sLoc.Trim,V.Local.fQty,V.Local.sLineData)
+	'check for item Master Records
+'	F.Intrinsic.String.Build("Select Lot, Bin,Heat, Serial_Number from Item_Master where Part = '{0}' and Location = '{1}' and Quantity >= '{2}'",V.DataView.ProNest!Nest(v.local.iCount).RawMaterial!FieldVal,V.Global.sLoc,V.DataView.ProNest!Nest(v.local.iCount).RmQtyLb!FieldVal,V.Local.sSql)
+	F.Intrinsic.String.Build("Select Lot, Bin,Heat, Serial_Number from Item_Master where Part = '{0}' and Location = '{1}' and Quantity >= '{2}'",V.DataView.ProNest!Nest(v.local.iCount).RawMaterial!FieldVal,V.Global.sLoc,V.Local.fIssueQty,V.Local.sSql)
+
+	F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstItem",V.Local.sSql)
+	'Create line
+	F.Intrinsic.Control.If(V.ODBC.Conx!rstItem.EOF,=,False)
+		F.Intrinsic.String.Build("{0},{1},{2},{3},",V.ODBC.Conx!rstItem.FieldValTrim!Lot,V.ODBC.Conx!rstItem.FieldValTrim!Bin,V.ODBC.Conx!rstItem.FieldValTrim!Heat,V.ODBC.Conx!rstItem.FieldValTrim!Serial_Number,V.Local.sItemData)
+		F.Intrinsic.String.Build("{0},{1},{2},{3},",V.ODBC.Conx!rstItem.FieldValTrim!Lot,V.ODBC.Conx!rstItem.FieldValTrim!Bin,V.ODBC.Conx!rstItem.FieldValTrim!Heat,V.ODBC.Conx!rstItem.FieldValTrim!Serial_Number,V.Local.sIssueItemData)
+	F.Intrinsic.Control.Else
+		V.Local.sItemData.set(",,,,")
+		V.Local.sIssueItemData.Set(",,,,")
+		F.Intrinsic.Control.DoEvents
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conx!rstItem.Close
+	F.Intrinsic.String.Build("{0}{1}{2},{3},{4}",V.Local.sLineData,V.Local.sItemdata,V.Local.sWorkOrder(0).Trim,V.Local.sWorkOrder(1).Trim,V.DataView.ProNest!Nest(v.local.iCount).WOSeq!FieldVal,V.Local.sItemData)
+	F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sFileData,V.Local.sItemData,V.Ambient.NewLine,V.Local.sFileData)
+	F.Intrinsic.Control.DoEvents	
+F.Intrinsic.Control.Next(V.Local.iCount)
+F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sFileData)
+F.Intrinsic.String.Build("L{0}{1}MOPEN.txt", V.Caller.CompanyCode,V.Caller.Terminal, V.Local.sFileName)
+F.Global.General.CallWrapperSync(450100, v.Local.sFileName)
+	'Undo the Stand Alone Issue
+F.Intrinsic.String.RPad(V.DataView.ProNest!Nest(0).RawMaterial!FieldVal," ",20,V.Local.sWholePart)
+'changed since they do not use rev
+'F.Intrinsic.String.Left(V.Local.sWholePart,17,V.Local.sPart(0))
+'F.Intrinsic.String.Right(V.Local.sWholePart,3,V.Local.sPart(1))
+'Get the Ceiling in order to calculate the actual scrap/
+
+F.Intrinsic.Math.Ceiling(V.Local.fTotalIssue,V.Local.iScrap)
+'Subtract this value from the issue quantity to get the amount needed to get to the next whole number
+F.Intrinsic.Math.Sub(V.Local.iScrap,V.Local.fTotalIssue,V.Local.fScrap)
+
+F.Intrinsic.Debug.Stop
+
+V.Local.fScrap.Set(V.DataView.ProNest!Nest(V.DataView.Pronest!Nest.RowCount--).ScrapCalc!FieldValFloat)
+
+F.Intrinsic.Math.Round(V.Local.fScrap, 4, V.Local.fScrap)
+V.Local.fRuns.Set(V.Screen.Form2!txtTotalRun.Text)
+F.Intrinsic.Math.Mult(V.Local.fRuns, V.Local.fScrap, V.Local.fScrap)
+
+
+F.Intrinsic.String.Build("{0},{1},{2},{3},{4},",V.Local.sWholePart,"",V.Global.sLoc.Trim,V.Local.fScrap,v.Screen.Form2!txtFlexSched.Text,V.Local.sIssueLine)
+'check to see if item master part
+F.Intrinsic.String.Right(V.Local.sDate, 6, V.Local.sDate)
+F.Intrinsic.String.Build("Select Lot, Bin,Heat,Serial_Number from Item_History where Part = '{0}' and Date_History = '{1}' and Code_Transaction = 'A50' and Reference = '{2}'",V.DataView.ProNest!Nest(0).RawMaterial!FieldVal,V.Local.sDate,v.Screen.Form2!txtFlexSched.Text,V.Local.sSql)
+F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstItem",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.Conx!rstItem.EOF,=,False)
+	F.Intrinsic.String.Build("{0},{1},{2},{3},",V.ODBC.Conx!rstItem.FieldVal!Lot,V.ODBC.Conx!rstItem.FieldVal!Bin,V.ODBC.Conx!rstItem.FieldVal!Heat,V.ODBC.Conx!rstItem.FieldVal!Serial_Number,V.Local.sIssueItemData)
+F.Intrinsic.Control.Else
+	V.Local.sIssueItemData.Set(",,,,")
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstItem.Close
+F.Intrinsic.String.Build("{0}{1}R,N,,",V.Local.sIssueLine,V.Local.sIssueItemData,V.Local.sIssueLine)
+F.Intrinsic.String.Build("{0}\{1}StandIss.txt",V.Caller.FilesDir,V.Caller.CompanyCode,V.Local.sFileName)
+F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sIssueLine)
+F.Intrinsic.String.Build("{0}StandIss.txt",V.Caller.CompanyCode,V.Local.sFileName)
+F.Intrinsic.Task.LaunchGSSSync("WIR104/NF","-C",V.Local.sFileName)
+'Gui.Form2.cmdIssueMat.Enabled(True)
+'Gui.Form2.cmdReverse.Enabled(True)
+F.Data.DataView.SetValue("ProNest", "Nest", -1, "IssueMatFlag", "N")
+F.Intrinsic.Control.CallSub(reversepartscompl)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdreverseissue_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdreverseissue_click.End
+
+Program.Sub.cmdvalidate_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdvalidate_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.irows.Declare(Long)
+V.Local.i.Declare(Long)
+V.Local.sraw.Declare(String)
+V.Local.ssql.Declare(String)
+V.Local.spart.Declare(String)
+V.Local.sPartCustom.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.swo.Declare(String)
+V.Local.ftotalrunqty.Declare(Float,0)
+V.Local.ftotalRMqtylb.Declare(Float,0)
+V.Local.ftotalRMqtySH.Declare(Float,0)
+V.Local.fRMtoIssuesh.Declare(Float,0)
+V.Local.ftotalRMtoIssuesh.Declare(Float,0)
+V.Local.ftotalscrap.Declare(Float,0)
+V.Local.fonhandqty.Declare(Float,0)
+V.Local.spronestrunQty.Declare(String)
+V.Local.bpass.Declare(Boolean)
+V.Local.srunqtysql.Declare(String)
+V.Local.frunqty.Declare(Float,0)
+V.Local.ftotalonhandqty.Declare(Float,0)
+V.Local.frunqtycalc.Declare(Float,0)
+V.Local.frunnumber.Declare(Float,0)
+V.Local.irawcount.Declare(Long)
+V.Local.fConCon.Declare(Float)
+V.Local.fTotalLbs.Declare(Float)
+V.Local.fTotalQty.Declare(Float)
+V.Local.fISH.Declare(Float)
+V.Local.fScrapLbs.Declare(Float)
+V.Local.fQtyNestTtl.Declare(Float)
+V.Local.fExpression.Declare(Float)
+V.Local.fQtyInLbs.Declare(Float)
+V.Local.iRoof.Declare(Long)
+V.Local.fResidue.Declare(Float)
+V.Local.fTotal.Declare(Float)
+gui.Form2.ddlMainWO.ClearItems
+F.Intrinsic.Control.If(V.Global.iErrorCount,>,0)
+	F.Intrinsic.UI.Msgbox("Please Clear the Current Errors!","Cancel Validate")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+'Update validate flag for error handling
+V.Global.bValidate.Set(True)
+Gui.Form2.cmdValidate.Enabled(False)
+	'loop through the grid
+Gui.Form2..Enabled(False)
+Gui.Form2.gsgcNest.Visible(False)
+
+V.Local.sRaw.Set(V.Screen.Form2!txtRawMaterial.Text)
+V.Local.sLoc.Set(V.Screen.Form2!txtLoc.Text)
+F.Intrinsic.String.Build("Select TOP 1 Consump_conv from Inventory_Mst3 where PART = '{0}' and LOCATION = '{1}'", V.Local.sRaw.Trim, V.Local.sLoc.Trim, V.Local.sSql)
+F.ODBC.Connection!Conx.ExecuteAndReturn(V.Local.sSql, V.Local.fConCon)
+F.Intrinsic.Control.If(V.Local.fConCon, <>, 0)
+	F.Intrinsic.Math.Div(1, V.Local.fConCon, V.Local.fConCon)
+F.Intrinsic.Control.Else
+	V.Local.fConCon.Set(1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Math.Mult(V.Global.fTotalOnHand, V.Global.fSheetToLbs, V.Global.fTotalOHLbs)
+
+F.Intrinsic.Control.For(V.Local.i,0,V.DataView.ProNest!Nest.RowCount--,1)
+	'get the component part
+	F.Intrinsic.String.Left(V.DataView.ProNest!Nest(V.Local.i).Part!FieldVal, 2, V.Local.sPartCustom)
+	F.Intrinsic.Control.If(V.Local.sPartCustom.Trim, <>, "C1")
+		F.Intrinsic.Control.If(V.Local.sPartCustom.Trim, <>, "C2")
+			F.Intrinsic.Control.CallSub(Error_componjob,"Part",V.DataView.ProNest!Nest(v.local.i).Part!FieldVal,"Row",V.Local.i)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'this is a test query for data
+	'get the work order information
+	
+	F.Intrinsic.String.Build("SELECT * FROM GCG_4138_WorkOrder WHERE PART = '{0}' AND QTY_ORDER <= '{1}' AND LOCATION = '{2}' ORDER BY DATE_DUE asc",V.DataView.ProNest!Nest(v.local.i).Part!FieldVal,V.DataView.ProNest!Nest(v.local.i).QtyNest!FieldValFloat, V.Global.sLoc, V.Local.ssql)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.ssql)
+	F.Intrinsic.Control.If(V.ODBC.Conx!rst.EOF,<>,True)
+		F.Intrinsic.String.Build("{0}-{1}",V.ODBC.Conx!rst.FieldValTrim!JOB,V.ODBC.Conx!rst.FieldValTrim!SUFFIX,V.Local.swo)
+		'set the wo
+		F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "WO#", V.Local.swo,"RunQty", V.ODBC.Conx!rst.FieldValfloat!QTY_ORDEr)
+		'set the Run qty
+'		F.Intrinsic.Math.Add(V.Local.ftotalrunqty,V.odbc.Conx!rst.FieldValFloat!QTY_ORDER,V.Local.ftotalrunqty)
+		F.Intrinsic.Math.Mult(V.DataView.Pronest!Nest(V.Local.i).ISH!FieldValTrim, V.Global.fSheetToLbs, V.Local.fQtyInLbs)
+		F.Intrinsic.Math.Add(V.Local.fQtyInLbs, V.Local.ftotalrunqty, V.Local.ftotalrunqty)
+		'Check if Global Shop qty exceeds ProNest quantity
+		'Customer requested not to do the Run Qty Mismatch check FEQ Feb 28 2017
+		'F.Intrinsic.Control.CallSub(Error_runqtymismatch,"Row",V.Local.i)
+		'RM Qty (lbs)
+		F.Intrinsic.Math.Mult(V.ODBC.Conx!rst.FieldValFloat!HOURS_ESTIMATED,V.Global.fConsumption,V.Local.frunqtycalc)
+		F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RMQtyLb", V.Local.frunqtycalc)
+		F.Intrinsic.Math.Add(V.Local.ftotalRMqtylb,V.Local.frunqtycalc,V.Local.ftotalRMqtylb)
+		'RM Qty (Sh)
+		F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RMQtySh", V.ODBC.Conx!rst.FieldValFloat!HOURS_ESTIMATED)
+		F.Intrinsic.Math.Add(V.Local.ftotalRMqtysh,V.ODBC.Conx!rst.FieldValFloat!HOURS_ESTIMATED,V.Local.ftotalRMqtySH)
+		'get the rm to issue
+		V.Local.fRMtoIssuesh.Set(V.Local.ftotalRMqtySH)
+'		F.Intrinsic.Math.Ceiling(V.Local.fRMtoIssuesh,V.Local.fRMtoIssuesh)
+
+F.Intrinsic.Debug.Stop
+
+		F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RmIssueSh", V.Local.fRMtoIssuesh,"ScrapCalc", "0")
+		'Initialize all rows of scrap to zero
+		'subtract the To Issue from the total quantity
+		F.Intrinsic.Math.Sub(V.Global.fTotalOHLbs,V.Local.ftotalrunqty,V.Local.ftotalonhandqty)
+		F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RemainingOnHand", V.Local.ftotalonhandqty)
+		
+F.Intrinsic.Debug.Stop
+
+		F.Intrinsic.Math.Mult(V.DataTable.ProNest(V.Local.i).PartWeight!FieldValFloat, V.Local.fConCon, V.Local.fISH)
+		F.Data.DataView.SetValue("Pronest", "Nest", V.Local.i, "RmIssueSh", V.Local.fISH)
+		'Check Remaining qty on hand
+		F.Intrinsic.Control.CallSub(Error_insufficientonhand,"Row",V.Local.i,"RunTotal",V.Local.ftotalonhandqty)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("SELECT * FROM GCG_4138_WorkOrder WHERE PART = '{0}' AND LOCATION = '{1}' ORDER BY DATE_DUE desc",V.DataView.ProNest!Nest(v.local.i).Part!FieldVal, V.Global.sLoc, V.Local.ssql)
+		'Lets call this one error since we're going to grab one that is larger than the Nest Quantity and this will throw an error.
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstError",V.Local.ssql)
+		'Make sure one exists, if not then this row will remain blank
+		F.Intrinsic.Control.If(V.ODBC.Conx!rstError.EOF,<>,True)
+			F.Intrinsic.String.Build("{0}-{1}",V.ODBC.Conx!rstError.FieldValTrim!JOB,V.ODBC.Conx!rstError.FieldValTrim!SUFFIX,V.Local.swo)
+			'set the wo
+			F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "WO#", V.Local.swo)
+			'set the Run qty
+			F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RunQty", V.ODBC.Conx!rstError.FieldValfloat!QTY_ORDER)
+'			F.Intrinsic.Math.Add(V.Local.ftotalrunqty,V.odbc.Conx!rstError.FieldValFloat!QTY_ORDER,V.Local.ftotalrunqty)
+
+			F.Intrinsic.Math.Mult(V.DataView.Pronest!Nest(V.Local.i).ISH!FieldValTrim, V.Global.fSheetToLbs, V.Local.fQtyInLbs)
+			F.Intrinsic.Math.Add(V.Local.fQtyInLbs, V.Local.ftotalrunqty, V.Local.ftotalrunqty)
+			'Check if Global Shop qty exceeds ProNest quantity
+			'F.Intrinsic.Control.CallSub(Error_runqtymismatch,"Row",V.Local.i)
+			'RM Qty (lbs)
+			F.Intrinsic.Math.Mult(V.ODBC.Conx!rstError.FieldValFloat!HOURS_ESTIMATED,V.Global.fConsumption,V.Local.frunqtycalc)
+			F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RMQtyLb", V.Local.frunqtycalc)
+			F.Intrinsic.Math.Add(V.Local.ftotalRMqtylb,V.Local.frunqtycalc,V.Local.ftotalRMqtylb)
+			'RM Qty (Sh)
+			F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RMQtySh", V.ODBC.Conx!rstError.FieldValFloat!HOURS_ESTIMATED)
+			F.Intrinsic.Math.Add(V.Local.ftotalRMqtysh,V.ODBC.Conx!rstError.FieldValFloat!HOURS_ESTIMATED,V.Local.ftotalRMqtySH)
+			'get the rm to issue
+			V.Local.fRMtoIssuesh.Set(V.Local.ftotalRMqtySH)
+			F.Intrinsic.Math.Round(V.Local.fRMtoIssuesh,0,V.Local.fRMtoIssuesh)
+			F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RmIssueSh", V.Local.fRMtoIssuesh)
+			'Initialize all rows of scrap to zero
+			F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "ScrapCalc", "0")
+			'subtract the To Issue from the total quantity
+'			F.Intrinsic.Math.Sub(V.Global.fTotalOHLbs,V.Local.fRMtoIssuesh,V.Local.ftotalonhandqty)
+			F.Intrinsic.Math.Sub(V.Global.fTotalOHLbs,V.Local.ftotalrunqty,V.Local.ftotalonhandqty)
+
+			F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RemainingOnHand", V.Local.ftotalonhandqty)
+			'Check Remaining qty on hand
+			
+			F.Intrinsic.Debug.Stop
+
+			F.Intrinsic.Math.Mult(V.DataTable.ProNest(V.Local.i).RMQtyLb!FieldValFloat, V.Local.fConCon, V.Local.fISH)
+			F.Data.DataView.SetValue("Pronest", "Nest", V.Local.i, "RmIssueSh", V.Local.fISH)
+			F.Intrinsic.Control.CallSub(Error_insufficientonhand,"Row",V.Local.i,"RunTotal",V.Local.ftotalonhandqty)
+		'No WO found
+		F.Intrinsic.Control.Else
+			'Due to Customer Procedure, we are also checking for raw part, If wo found, we must ensure the WO being created is for a custom part
+			V.Local.ssql.Set("SELECT * FROM GCG_4138_WorkOrder WHERE ((left(part,2) = 'C1') or (left(part,2) = 'C2')) AND")
+			F.Intrinsic.String.Build("{0} RAW_PART = '{1}' AND QTY_ORDER <= '{2}' AND LOCATION = '{3}' ORDER BY DATE_DUE asc", V.Local.ssql, V.DataView.ProNest!Nest(v.local.i).Part!FieldVal,V.DataView.ProNest!Nest(v.local.i).QtyNest!FieldValFloat, V.Global.sLoc, V.Local.ssql)
+			F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstC",V.Local.ssql)
+			F.Intrinsic.Control.If(V.ODBC.Conx!rstC.EOF,<>,True)
+				'Check to see if PART is custom, if so we can use that WO. Otherwise no work order was found
+				F.Intrinsic.String.Build("{0}-{1}",V.ODBC.Conx!rstC.FieldValTrim!JOB,V.ODBC.Conx!rstC.FieldValTrim!SUFFIX,V.Local.swo)
+				'set the wo
+				F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "WO#", V.Local.swo,"RunQty", V.ODBC.Conx!rstC.FieldValfloat!QTY_ORDEr)
+				'set the Run qty
+		'		F.Intrinsic.Math.Add(V.Local.ftotalrunqty,V.odbc.Conx!rst.FieldValFloat!QTY_ORDER,V.Local.ftotalrunqty)
+				F.Intrinsic.Math.Mult(V.DataView.Pronest!Nest(V.Local.i).ISH!FieldValTrim, V.Global.fSheetToLbs, V.Local.fQtyInLbs)
+				F.Intrinsic.Math.Add(V.Local.fQtyInLbs, V.Local.ftotalrunqty, V.Local.ftotalrunqty)
+				'Check if Global Shop qty exceeds ProNest quantity
+				'Customer requested not to do the Run Qty Mismatch check FEQ Feb 28 2017
+				'F.Intrinsic.Control.CallSub(Error_runqtymismatch,"Row",V.Local.i)
+				'RM Qty (lbs)
+				F.Intrinsic.Math.Mult(V.ODBC.Conx!rstC.FieldValFloat!HOURS_ESTIMATED,V.Global.fConsumption,V.Local.frunqtycalc)
+				F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RMQtyLb", V.Local.frunqtycalc)
+				F.Intrinsic.Math.Add(V.Local.ftotalRMqtylb,V.Local.frunqtycalc,V.Local.ftotalRMqtylb)
+				'RM Qty (Sh)
+				F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RMQtySh", V.ODBC.Conx!rstC.FieldValFloat!HOURS_ESTIMATED)
+				F.Intrinsic.Math.Add(V.Local.ftotalRMqtysh,V.ODBC.Conx!rstC.FieldValFloat!HOURS_ESTIMATED,V.Local.ftotalRMqtySH)
+				'get the rm to issue
+				V.Local.fRMtoIssuesh.Set(V.Local.ftotalRMqtySH)
+									
+				F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RmIssueSh", V.Local.fRMtoIssuesh,"ScrapCalc", "0")
+				'Initialize all rows of scrap to zero
+				'subtract the To Issue from the total quantity
+				F.Intrinsic.Math.Sub(V.Global.fTotalOHLbs,V.Local.ftotalrunqty,V.Local.ftotalonhandqty)
+				F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "RemainingOnHand", V.Local.ftotalonhandqty)
+				
+				F.Intrinsic.Math.Mult(V.DataTable.ProNest(V.Local.i).PartWeight!FieldValFloat, V.Local.fConCon, V.Local.fISH)
+				F.Data.DataView.SetValue("Pronest", "Nest", V.Local.i, "RmIssueSh", V.Local.fISH)
+				'Check Remaining qty on hand
+				F.Intrinsic.Control.CallSub(Error_insufficientonhand,"Row",V.Local.i,"RunTotal",V.Local.ftotalonhandqty)
+			F.Intrinsic.Control.Else
+				F.Data.DataView.SetValue("ProNest", "Nest", v.Local.i, "ScrapCalc", "0")
+				F.Intrinsic.Control.CallSub(Error_wonotfound,"Found",False,"Row",V.Local.i)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.Conx!rstC.Close
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rstError.Close
+	F.Intrinsic.Control.EndIf
+	'close connection
+	F.ODBC.Conx!rst.close
+	'clear the local variables
+	V.Local.fonhandqty.Set(0)
+	V.Local.fRMtoIssuesh.Set(0)
+	V.Local.frunqty.Set(0)
+	V.Local.fonhandqty.Set(0)
+	V.Local.frunqtycalc.Set(0)
+	V.Local.spart.Set("")
+	V.Local.swo.Set("")
+F.Intrinsic.Control.Next(V.Local.i)
+'Set the totals in the textboxes
+Gui.Form2.txtTotalRunGSS.Text(V.Local.ftotalrunqty)
+Gui.Form2.txtTotalLbsGSS.Text(V.Local.ftotalRMqtylb.Format#0.00)
+'Gui.Form2.txtTotal.Text(V.Local.ftotalRMqtySH.Format#0.00)
+'Set Total To Issue (Sh) to the value of Total rounded
+F.Intrinsic.Math.Round(V.Local.ftotalRMqtySH,0,V.Local.ftotalRMtoIssuesh)
+Gui.Form2.txtToIssue.Text(V.Local.ftotalRMtoIssuesh)
+'Set textbox scrap, and set the final row in the grid with the scrap value
+F.Intrinsic.Math.Mult(V.Global.fScrap, V.Global.fSheetToLbs, V.Local.fScrapLbs)
+Gui.Form2.txtToScrap.Text(V.Local.fScrapLbs)
+
+
+F.Data.DataView.SetValue("ProNest", "Nest", V.DataView.ProNest!Nest.RowCount--, "ScrapCalc", V.Global.fScrap)
+'Check to make sure the Total Run Qty ProNext = Total Run Quantity Global Shop Solutions
+F.Intrinsic.Control.For(V.Local.i,0,V.DataView.ProNest!Nest.RowCount--,1)
+	'Check and set for each line
+'	F.Intrinsic.Control.CallSub(Error_totalrunmismatch,"Row",V.Local.i)
+F.Intrinsic.Control.Next(V.Local.i)
+
+'F.Intrinsic.Control.CallSub(marchmods)
+
+'F.Intrinsic.Debug.Stop
+
+F.Data.DataTable.Compute("ProNest", "SUM(RMQTYLB)", "", V.Local.fTotalLbs)
+F.Data.DataTable.Compute("ProNest", "SUM(RMISSUESH)", "", V.Local.fTotalQty)
+F.Data.DataTable.Compute("ProNest", "SUM(CALCPARTWEIGHT)", "", V.Local.fTotalLbs)
+F.Data.DataTable.Compute("ProNest", "SUM(QTYNEST)", "", V.Local.fQtyNestTtl)
+
+'I am unsure of which Total LBS they want it stored in
+F.Intrinsic.Math.Round(V.Local.fTotalLbs, 4, V.Local.fTotalLbs)
+Gui.Form2.txtTotalLbs.Text(V.Local.fTotalLbs)
+Gui.Form2.txtTotalLbsGSS.Text(V.Local.fTotalLbs)
+F.Intrinsic.Math.Mult(V.Local.fTotalLbs, V.Global.fLbsToSheet, V.Local.fTotalQty)
+
+F.Intrinsic.Math.Ceiling(V.Local.fTotalQty, V.Local.iRoof)
+
+Gui.Form2.txtToIssue.Text(V.Local.iRoof)
+Gui.Form2.txtTotalRunGSS.Text(V.Local.fQtyNestTtl)
+'Gui.Form2.txtTotal.Text(V.Local.fTotalQty)
+
+F.Data.DataTable.Compute("ProNest", "SUM(ISHDISP)", "", V.Local.fTotalQty)
+F.Intrinsic.Math.Ceiling(V.Local.fTotalQty, V.Local.iRoof)
+
+F.Intrinsic.Math.Sub(V.Local.iRoof, V.Local.fTotalQty, V.Local.fResidue)
+F.Intrinsic.Math.Round(V.Local.fResidue, 4, V.Local.fResidue)
+
+V.Global.fScrapPrime.Set(V.Local.fResidue)
+F.Data.DataView.SetValue("ProNest", "Nest", V.DataView.ProNest!Nest.RowCount--, "ScrapCalc", V.Local.fResidue)
+Gui.Form2.gsgcNest.MainView("GridNest")
+
+F.Intrinsic.Math.Mult(V.Local.fResidue, V.Global.fSheetToLbs, V.Local.fResidue)
+F.Intrinsic.Math.Round(V.Local.fResidue, 4, V.Local.fResidue)
+
+V.Local.fTotal.Set(V.Screen.Form2!txtTotalRun.Text)
+V.Local.fResidue.Set(V.DataView.Pronest!Nest(V.DataView.ProNest!Nest.RowCount--).ScrapCalc!FieldValFloat)
+F.Intrinsic.Math.Mult(V.Local.fTotal, V.Local.fResidue, V.Local.fResidue)
+F.Intrinsic.Math.Mult(V.Local.fResidue, V.Global.fSheetToLbs, V.Local.fResidue)
+Gui.Form2.txtToScrap.Text(V.Local.fResidue)
+
+Gui.Form2.gsgcNest.Visible(True)
+'iftheerrorcounteris0enabletheprocessbutton
+F.Intrinsic.Control.If(V.Global.iErrorCount,=,0)
+	'gui.Form2.cmdUpMaterial.Enabled(True)
+	gui.Form2.ddlMainWO.addItems("dataview","Pronest","nest","","WO#")
+	Gui.Form2.cmdProcess.Enabled(True)
+F.Intrinsic.Control.EndIf
+'Gui.Form2.cmdProcess.Enabled(False)
+Gui.Form2..Enabled(True)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdvalidate_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdvalidate_click.End
+
+Program.Sub.cmdrefresh_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdrefresh_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.iRowTotal.Declare(Long)
+V.Local.sComponent.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sCust.Declare(String)
+V.Local.iC.Declare(Long)
+V.Local.fRun.Declare(Float)
+'Refresh will be used to re-check for errors
+'Get the number of rows in the grid
+'For each row in the grid check for all errors again
+Gui.Form2.gsgcNest.Visible(False)
+
+F.Intrinsic.Control.For(V.Local.iC,0,V.DataView.ProNest!Nest.RowCount--,1)
+	'Check if comp has record in Global Shop
+	F.Intrinsic.String.Left(V.DataView.ProNest!Nest(V.Local.iC).Part!FieldVal, 2, V.Local.sCust)
+	F.Intrinsic.Control.If(V.Local.sCust.Trim, <>, "C1")
+		F.Intrinsic.Control.If(V.Local.sCust.Trim, <>, "C2")
+			F.Intrinsic.Control.CallSub(Error_missingcomp,"Part",V.DataView.ProNest!Nest(v.local.iC).Part!FieldVal,"Row",V.Local.iC)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	'Check Raw material is in Global Shop and matches ProNest
+'	F.Intrinsic.Control.CallSub(Error_mismatchraw,"Row",V.Local.iC)
+	'Check that there is a consumption value
+	F.Intrinsic.Control.CallSub(Error_zeroconsump,"Row",V.Local.iC)
+	'Check if Validate has been run
+	F.Intrinsic.Control.If(V.Global.bValidate,=,True)
+		'Get the component part
+		V.Local.sComponent.Set(V.DataView.ProNest!Nest(v.local.iC).Part!FieldVal)
+		'Check component part
+		F.Intrinsic.Control.If(V.Local.sCust.Trim, <>, "C1")
+			F.Intrinsic.Control.If(V.Local.sCust.Trim, <>, "C2")
+				F.Intrinsic.Control.CallSub(Error_componjob,"Part",V.DataView.ProNest!Nest(v.local.iC).Part!FieldVal,"Row",V.Local.iC)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		'Get Running Total for the row
+		V.Local.fRun.Set(V.DataView.ProNest!Nest(v.local.iC).RemainingOnHand!FieldVal)
+		'Check On Hand Qty
+		F.Intrinsic.Control.CallSub(Error_insufficientonhand,"Row",V.Local.iC,"RunTotal",V.Local.fRun)
+		'Check that run qty for WO matches
+		'F.Intrinsic.Control.CallSub(Error_runqtymismatch,"Row",V.Local.iC)
+		'Check that the totals match
+'		F.Intrinsic.Control.CallSub(Error_totalrunmismatch,"Row",V.Local.iC)
+		'Check to see if there's a WO now
+		V.Local.sWO.Set(V.DataView.ProNest!Nest(v.local.iC).WO#!FieldVal)
+		F.Intrinsic.Control.If(V.Local.sWO.Trim,<>,"")
+			F.Intrinsic.Control.CallSub(Error_wonotfound,"Found",True,"Row",V.Local.iC)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.CallSub(Error_wonotfound,"Found",False,"Row",V.Local.iC)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iC)
+'iftheerrorcounteris0enabletheprocessbutton
+F.Intrinsic.Control.If(V.Global.iErrorCount,=,0)
+	F.Intrinsic.Control.If(V.Global.bValidate, =, True)
+		Gui.Form2.cmdProcess.Enabled(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Gui.Form2.gsgcNest.Visible(True)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdrefresh_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdrefresh_click.End
+
+Program.Sub.gsfgpronest_commandclick.Start
+F.Intrinsic.Control.SetErrorHandler("gsfgpronest_commandclick_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sBrowser.Declare(String)
+V.Local.sFG.Declare(String)
+V.Local.sColumnTitles.Declare(String)
+v.Local.sWO.Declare(String)
+V.Local.iColumnWidths.Declare(Long)
+V.Local.iCount.Declare(Long)
+v.Local.iRet.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sParams.Declare(String)
+
+
+F.Intrinsic.Control.If(V.Global.bProcess,<>,True)
+	'Disable Screen
+	Gui.Form2..Enabled(False)
+	'gui.Form2.ddlMainWO.ClearItems
+	F.Intrinsic.Control.If(v.Args.Column, =, "Remark")
+		'Get finished good for the row
+		v.Local.sFG.Set(V.DataTable.ProNest(v.Args.RowIndex).Part!FieldValTrim)
+		F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+		'Set Column Titles for Browser
+		F.Intrinsic.String.Split("Job*!*Suffix*!*Qty*!*Customer*!*Part*!*Raw Part","*!*",V.Local.sColumnTitles)
+		F.Intrinsic.String.Split("1000*!*1000*!*1000*!*1500*!*2000*!*2000","*!*",V.Local.iColumnWidths)
+'		F.Intrinsic.String.Build("Select Distinct Job, Suffix, Qty_Order,Customer, Part, Raw_Part from GCG_4138_WorkOrder where Part = '{0}' and LOCATION = '{1}'",V.Local.sFG, V.Global.sLoc, V.Local.sSQL)
+		V.Local.sSQL.Set("Select Distinct Job, Suffix, Qty_Order, Customer, Part, Raw_Part from GCG_4138_WorkOrder where ")		
+		F.Intrinsic.String.Build("{0} LOCATION = '{1}' and (Part = '{2}' or (Raw_Part = '{2}' and ((left(part,2) = 'C1') or (left(part,2) = 'C2'))))", V.Local.sSQL, V.Global.sLoc, V.Local.sFG, V.Local.sSQL)
+		F.Intrinsic.UI.Browser("Select Job","conx",V.Local.sSQL,V.Local.sColumnTitles,V.Local.iColumnWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			'Split return string to get the Work Order
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			F.Intrinsic.String.Build("{0}-{1}",V.Local.sRet(0).Trim,V.Local.sRet(1).Trim,V.Local.sRet(0))
+			'Update to WO selected
+			F.Data.DataTable.SetValue("ProNest", v.Args.RowIndex, "WO#", V.Local.sRet(0))
+			'Update WO information
+			F.Intrinsic.Control.CallSub(Updatewo,"Row",v.Args.RowIndex)
+			'Update Error
+			F.Intrinsic.Control.CallSub(Error_wonotfound,"Found",True,"Row",v.Args.RowHandle)
+'			F.Intrinsic.Control.CallSub(cmdvalidate_click)
+			'Enable Screen
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(v.Args.Column, =, "WO#")
+		'Get the WO Number selected
+		v.Local.sWo.Set(V.DataTable.ProNest(v.Args.RowIndex).WO#!FieldValTrim)
+		'Check to make sure there is actually a WO
+		F.Intrinsic.Control.If(V.Local.sWO.Trim,<>,"")
+			'Split WO at - since it is combined in the grid
+			F.Intrinsic.String.Split(V.Local.sWO,"-",V.Local.sWO)
+			'Build Parameter string
+			F.Intrinsic.String.Build("{0}!*!{1}!*!O",V.Local.sWO(0),V.Local.sWO(1),V.Local.sParams)
+			F.Global.General.CallWrapperSync(2009,V.Local.sParams)
+			'Disable the screen until I've finished updating the data
+			Gui.Form2..Enabled(False)
+			'Update WO information and the rest of the screen
+			F.Intrinsic.Control.CallSub(Updatewo,"Row",V.Args.RowIndex)
+		F.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.ElseIf(v.Args.Column, =, "Part")
+		'set Global Var for Supply and Demand
+		F.Intrinsic.Control.If(V.Global.iSupplyDemand,!=,-1)
+			Gui.Form2.gsgcNest.SetCellAppearance("GridNest", 3, V.Global.iSupplyDemand, "backcolor", V.Color.White)
+			V.Global.iSupplyDemand.Set(V.Args.RowHandle)
+			Gui.Form2.gsgcNest.SetCellAppearance("GridNest", 3, v.Args.RowHandle, "backcolor", V.Color.White)
+		F.Intrinsic.Control.Else
+			Gui.Form2.txtRawMaterial.BackColor(V.Color.White)
+			V.Global.iSupplyDemand.Set(v.Args.RowHandle)
+			Gui.Form2.gsgcNest.SetCellAppearance("GridNest", 3, v.Args.RowHandle, "backcolor", V.Color.SEC-GSS-01)
+		F.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	'gui.Form2.ddlMainWO.addItems("dataview","Pronest","nest","","WO#")
+	Gui.Form2..Enabled(True)
+	Gui.Form2.gsgcNest.SetCellAppearance("GridNest", 17, v.Args.RowHandle, "Forecolor", v.Color.SEC-GSS-02)
+	Gui.Form2.cmdRefresh.SetFocus
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("gsfgpronest_commandclick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.gsfgpronest_commandclick.End
+
+Program.Sub.UpdateWO.Start
+F.Intrinsic.Control.SetErrorHandler("UpdateWO_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.fReturn.Declare(Float)
+V.Local.fNewRmQtyLb.Declare(Float)
+V.Local.fRunQty.Declare(Float)
+V.Local.fRMQtyLb.Declare(Float)
+V.Local.fRMQtySh.Declare(Float)
+V.Local.fRMIssue.Declare(Float)
+V.Local.fTotalRmQtySh.Declare(Float,0)
+V.Local.fRound.Declare(Float)
+V.Local.iRunTotal.Declare(Long,0)
+V.Local.iC.Declare(Long)
+V.Local.iTotalRows.Declare(Long)
+V.Local.iUDTRow.Declare(Long)
+V.Local.fTotalLbs.Declare(Float)
+V.Local.fTotalQty.Declare(Float)
+V.Local.fQtyNestTtl.Declare(Float)
+V.Local.iRoof.Declare(Long)
+V.Local.fResidue.Declare(Float)
+Gui.Form2.gsgcNest.Visible(False)
+'Get Work Order from screen
+
+F.Intrinsic.Debug.Stop
+
+v.Local.sWO.Set(V.DataTable.ProNest(v.Args.Row).WO#!FieldValTrim)
+'Split WO in order to get the Job and suffix
+F.Intrinsic.String.Split(V.Local.sWO,"-",V.Local.sWO)
+'Get the Qty_Order for the WO
+'Added location FEQ 3.14
+'F.Intrinsic.String.Build("SELECT QTY_ORDER FROM V_JOB_HEADER WHERE JOB = '{0}' AND SUFFIX = '{1}'",V.Local.sWO(0),V.Local.sWO(1),V.Local.sSQL)
+F.Intrinsic.String.Build("SELECT QTY_ORDER FROM V_JOB_HEADER WHERE JOB = '{0}' AND SUFFIX = '{1}' AND LOCATION = '{2}' ",V.Local.sWO(0),V.Local.sWO(1),V.Global.sLoc, V.Local.sSQL)
+F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstHead",V.Local.sSQL)
+'Make sure there's a record
+F.Intrinsic.Control.If(V.ODBC.Conx!rstHead.EOF,<>,True)
+	'Get the original run quantity
+	V.Local.fRunQty.Set(V.DataTable.ProNest(v.Args.Row).RunQty!FieldValFloat)
+	'Set the new value in the flexgrid
+	F.Data.DataTable.SetValue("ProNest", v.Args.Row, "RunQty", V.ODBC.Conx!rstHead.FieldValFloat!Qty_Order)
+	'Subtract the new amount from the original
+	F.Intrinsic.Math.Sub(V.DataTable.ProNest(v.Args.Row).RunQty!FieldValFloat,V.Local.fRunQty,V.Local.fReturn)
+	'add this return value to the total.
+	F.Intrinsic.Math.Add(V.Screen.Form2!txtTotalRunGSS.Text,V.Local.fReturn,V.Local.fReturn)
+	'Set the updated value to the textbox
+	Gui.Form2.txtTotalRunGSS.Text(V.Local.fReturn)
+	F.Intrinsic.Control.DoEvents
+F.Intrinsic.Control.Else
+	'Inform user information couldn't be found and set values to zero
+	F.Intrinsic.UI.Msgbox("Could not find Work Order Information")
+	F.Data.DataTable.SetValue("ProNest", v.Args.Row, "RunQty", "0")
+F.Intrinsic.Control.EndIf
+F.ODBC.ConX!rstHead.Close
+'Get the updated RM Qty (Sh and Lb)
+F.Intrinsic.String.Build("Select HOURS_ESTIMATED FROM V_JOB_OPERATIONS WHERE LMO = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}'","M",V.Local.sWO(0),V.Local.sWO(1),V.Local.sSQL)
+F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstOp",V.Local.sSQL)
+'Make sure there's a record
+F.Intrinsic.Control.If(V.ODBC.Conx!rstOp.EOF,<>,True)
+	F.Intrinsic.String.Split(v.ODBC.Conx!rstOp.FieldValTrim!Hours_Estimated, "*!*", v.Local.sRet)
+	'Get the original Quantities in the Grid
+	V.Local.fRMQtyLb.Set(V.DataTable.ProNest(v.Args.Row).RMQtyLb!FieldValFloat)
+	V.Local.fRMQtySh.Set(V.DataTable.ProNest(v.Args.Row).RMQtySh!FieldValFloat)
+	'Calculate the new RM Qty Lbs
+	F.Intrinsic.Math.Mult(v.Local.sRet,V.Global.fConsumption,V.Local.fNewRmQtyLb)
+	'Set the new values in the flexgrid
+	F.Data.DataTable.SetValue("ProNest", v.Args.Row, "RMQtyLb", V.Local.fNewRmQtyLb)
+	F.Data.DataTable.SetValue("ProNest", v.Args.Row, "RMQtySh", v.Local.sRet)
+	F.Intrinsic.String.Format(V.DataTable.ProNest(v.Args.Row).RMQtySh!FieldValFloat,"#0.00",V.Local.sRet)
+	F.Data.DataTable.SetValue("ProNest", v.Args.Row, "RMQtySh", V.Local.sRet)
+	'Get the updated values for totals
+	F.Intrinsic.Math.Sub(V.DataTable.ProNest(v.Args.Row).RMQtySh!FieldValFloat,V.Local.fRMQtySh,V.Local.fReturn)
+'	F.Intrinsic.Math.Add(V.Local.fReturn,V.Screen.Form2!txtTotal.Text,V.Local.fReturn)
+'	Gui.Form2.txtTotal.Text(V.Local.fReturn)
+	F.Intrinsic.String.Format(V.Local.fNewRmQtyLb,"#0.00",V.Local.fNewRmQtyLb)
+	F.Intrinsic.Math.Sub(V.Local.fNewRmQtyLb,V.Local.fRMQtyLb,V.Local.fReturn)
+	F.Intrinsic.Math.Add(V.Local.fReturn,V.Screen.Form2!txtTotalLbsGSS.Text,V.Local.fReturn)
+	F.Intrinsic.Math.Round(V.Local.fReturn, 4, V.Local.fReturn)
+	Gui.Form2.txtTotalLbsGSS.Text(V.Local.fReturn)
+F.Intrinsic.Control.Else
+	'Inform user information couldn't be found and set values to zero
+	F.Intrinsic.UI.Msgbox("Could not find Work Order Information")
+	F.Data.DataTable.SetValue("ProNest", v.Args.Row, "RMQtyLb", "0")
+	F.Data.DataTable.SetValue("ProNest", v.Args.Row, "RMQtySh", "0")
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstOp.Close
+'Get the row count
+'Loop through the grid and update the RM Issue, and the Running Total
+F.Intrinsic.Control.For(V.Local.iC,0,V.DataView.ProNest!Nest.RowCount--,1)
+	'Get remaining qty
+	V.Local.fRMQtySh.Set(V.DataView.ProNest!Nest(V.Local.iC).RMQtySh!FieldValFloat)
+	'Update the total RM Qty Sh
+	F.Intrinsic.Math.Add(V.Local.fTotalRmQtySh,V.Local.fRMQtySh,V.Local.fTotalRmQtySh)
+	'Round the value to set it to RM Issue
+	F.Intrinsic.Math.Ceiling(V.Local.fTotalRmQtySh,V.Local.fRound)
+	'Update RM Issue
+	F.Data.DataView.SetValue("ProNest", "Nest",v.Local.iC, "RmIssueSh", V.Local.fRound)
+	'Get the Running Total
+	F.Intrinsic.Math.Sub(V.Screen.Form2!txtOnHand.Text,V.Local.fRound,V.Local.iRunTotal)
+	'Set the new run total
+	F.Data.DataView.SetValue("ProNest", "Nest",v.Local.iC, "RemainingOnHand", V.Local.iRunTotal)
+F.Intrinsic.Control.Next(V.Local.iC)
+'Set the new Remain to Issue Total Value
+Gui.Form2.txtToIssue.Text(V.Local.fRound)
+'Refresh to see if any errors were removed
+F.Intrinsic.Control.CallSub(Cmdrefresh_click)
+
+F.Data.DataTable.Compute("ProNest", "SUM(RMQTYLB)", "", V.Local.fTotalLbs)
+F.Data.DataTable.Compute("ProNest", "SUM(RMISSUESH)", "", V.Local.fTotalQty)
+F.Data.DataTable.Compute("ProNest", "SUM(CALCPARTWEIGHT)", "", V.Local.fTotalLbs)
+F.Data.DataTable.Compute("ProNest", "SUM(QTYNEST)", "", V.Local.fQtyNestTtl)
+
+'I am unsure of which Total LBS they want it stored in
+F.Intrinsic.Math.Round(V.Local.fTotalLbs, 4, V.Local.fTotalLbs)
+Gui.Form2.txtTotalLbs.Text(V.Local.fTotalLbs)
+Gui.Form2.txtTotalLbsGSS.Text(V.Local.fTotalLbs)
+F.Intrinsic.Math.Mult(V.Local.fTotalLbs, V.Global.fLbsToSheet, V.Local.fTotalQty)
+
+F.Intrinsic.Math.Ceiling(V.Local.fTotalQty, V.Local.iRoof)
+Gui.Form2.txtToIssue.Text(V.Local.iRoof)
+Gui.Form2.txtTotalRunGSS.Text(V.Local.fQtyNestTtl)
+
+F.Intrinsic.Math.Sub(V.Local.iRoof, V.Local.fTotalQty, V.Local.fResidue)
+F.Intrinsic.Math.Round(V.Local.fResidue, 4, V.Local.fResidue)
+'F.Data.DataView.SetValue("ProNest", "Nest", V.DataView.ProNest!Nest.RowCount--, "ScrapCalc", V.Local.fResidue)
+Gui.Form2.gsgcNest.MainView("GridNest")
+F.Intrinsic.Math.Mult(V.Local.fResidue, V.Global.fSheetToLbs, V.Local.fResidue)
+F.Intrinsic.Math.Round(V.Local.fResidue, 4, V.Local.fResidue)
+'Gui.Form2.txtToScrap.Text(V.Local.fResidue)
+
+
+Gui.Form2.gsgcNest.Visible(True)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("UpdateWO_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.UpdateWO.End
+
+Program.Sub.Error_MismatchRaw.Start
+F.Intrinsic.Control.SetErrorHandler("Error_MismatchRaw_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+'For Error 2, Raw material could not be found within Global Shop Solutions
+F.Intrinsic.String.Build("SELECT * FROM V_INVENTORY_MSTR WHERE PART = '{0}' AND LOCATION = '{1}'",V.DataView.ProNest!Nest(v.Args.Row).RawMaterial!FieldVal,V.Global.sLoc.Trim,V.Local.sSQL)
+F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstRaw",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.Conx!rstRaw.EOF,=,True)
+'	F.Intrinsic.Control.CallSub(Adderror,"Row",V.Args.Row,"Error","")
+F.Intrinsic.Control.Else
+'	F.Intrinsic.Control.CallSub(Removeerror,"Row",V.Args.Row,"Error","")
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstRaw.Close
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Error_MismatchRaw_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Error_MismatchRaw.End
+
+Program.Sub.Error_MissingComp.Start
+F.Intrinsic.Control.SetErrorHandler("Error_MissingComp_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+
+'Subroutine for error 1. component part could not be found within Global Shop Solutions
+F.Intrinsic.String.Build("Select PART from V_INVENTORY_MSTR where PART = '{0}' and LOCATION = '{1}'",V.Args.Part.Trim,V.Global.sLoc.Trim,V.Local.ssql)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstComp",V.Local.sSql)
+'if nothing set a 1 in the error column
+F.Intrinsic.Control.If(V.ODBC.conx!rstComp.EOF,=,True)
+	F.Intrinsic.Control.CallSub(Adderror,"Row",V.Args.Row,"Error","3")
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(Removeerror,"Row",V.Args.Row,"Error","3")
+F.intrinsic.control.EndIf
+F.ODBC.Conx!rstComp.Close
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Error_MissingComp_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Error_MissingComp.End
+
+Program.Sub.Error_ZeroConsump.Start
+F.Intrinsic.Control.SetErrorHandler("Error_ZeroConsump_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+'For error seven, simply check to make sure that the consumption conversion isn't 0
+F.Intrinsic.Control.If(V.Global.fConsumption,=,0)
+	F.Intrinsic.Control.CallSub(Adderror,"Row",V.Args.Row,"Error","4")
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(Removeerror,"Row",V.Args.Row,"Error","4")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Error_ZeroConsump_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Error_ZeroConsump.End
+
+Program.Sub.AddError.Start
+F.Intrinsic.Control.SetErrorHandler("AddError_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sErrorList.Declare(String)
+V.Local.bRet.Declare(Boolean)
+V.Local.iCount.Declare(Long)
+'Get the error list and check to see if the error is already in the string
+V.Local.sErrorList.Set(V.DataView.ProNest!Nest(V.Args.Row).Error!FieldVal)
+F.Intrinsic.String.IsInString(V.Local.sErrorList,V.Args.Error,True,V.Local.bRet)
+'If it isn't already in the string do nothing
+F.Intrinsic.Control.If(V.Local.bRet,<>,True)
+	'Add to the list
+	F.Intrinsic.Control.If(V.Local.sErrorList,=,"")
+		V.Local.sErrorList.Set(V.Args.Error)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0},{1}",V.Local.sErrorList,V.Args.Error,V.Local.sErrorList)
+	F.Intrinsic.Control.EndIf
+	'Split the string at the comma
+	F.Intrinsic.String.Split(V.Local.sErrorList,",",V.Local.sErrorList)
+	'Sort array so that it's in ascending order
+	F.Intrinsic.String.SortAsc(V.Local.sErrorList,V.Local.sErrorList)
+	'Recombine string
+	F.Intrinsic.String.Join(V.Local.sErrorList,",",V.Local.sErrorList)
+	'Now set the new list to the text matrix
+	F.Data.DataView.SetValue("ProNest", "Nest", V.Args.Row, "Error", V.Local.sErrorList)
+	'Add one to the number of errors
+	F.Intrinsic.Math.Add(V.Global.iErrorCount,1,V.Global.iErrorCount)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("AddError_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.AddError.End
+
+Program.Sub.Error_RunQtyMisMatch.Start
+F.Intrinsic.Control.SetErrorHandler("Error_RunQtyMisMatch_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.fPNRunQty.Declare(Float)
+V.Local.fGSRunQty.Declare(Float)
+V.Local.fPNRunQty.Set(V.DataView.ProNest!Nest(v.Args.Row).QtyNest!FieldValFloat)
+'Get the ProNest Run Qty
+'Get the GS Work Order Run Qty
+V.Local.fGSRunQty.Set(V.DataView.ProNest!Nest(v.Args.Row).RunQty!FieldValFloat)
+'see if the run qty exceeds the pro nest run qty
+F.Intrinsic.Control.If(V.Local.fGSRunQty,<>,V.Local.fPNRunQty)
+'	F.Intrinsic.Control.CallSub(Adderror,"Row",V.Args.Row,"Error","")
+F.Intrinsic.Control.Else
+'	F.Intrinsic.Control.CallSub(Removeerror,"Row",V.Args.Row,"Error","")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Error_RunQtyMisMatch_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Error_RunQtyMisMatch.End
+
+Program.Sub.Error_TotalRunMismatch.Start
+F.Intrinsic.Control.SetErrorHandler("Error_TotalRunMismatch_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+'For error 3, Total Run Qty ProNest does not equal Total Run Qty Global Shop Solutions
+F.Intrinsic.Control.If(V.Screen.Form2!txtTotalRun.Text,<>,V.Screen.Form2!txtTotalRunGSS.Text)
+	F.Intrinsic.Control.CallSub(Adderror,"Row",V.Args.Row,"Error","1")
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(Removeerror,"Row",V.Args.Row,"Error","1")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Error_TotalRunMismatch_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Error_TotalRunMismatch.End
+
+Program.Sub.Error_InsufficientOnhand.Start
+F.Intrinsic.Control.SetErrorHandler("Error_InsufficientOnhand_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+'For Error 4, insufficient on hand quantity in global shop to meet pronest needs
+F.Intrinsic.Control.If(V.Args.RunTotal,<,0)
+	F.Intrinsic.Control.CallSub(Adderror,"Row",V.Args.Row,"Error","2")
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(Removeerror,"Row",V.Args.Row,"Error","2")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Error_InsufficientOnhand_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Error_InsufficientOnhand.End
+
+Program.Sub.cmdprocess_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdprocess_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.iTotalRows.Declare(Long)
+V.Local.sUpload.Declare(String)
+V.Local.sRow.Declare(String)
+V.Local.sFlexNum.Declare(String)
+V.Local.sSchedIncr.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sFile.Declare(String)
+V.Local.bRet.Declare(Boolean)
+V.Local.sLabJob.Declare(String)
+V.Local.sLabSuf.Declare(String)
+V.Local.sLabSeq.Declare(String)
+V.Local.sWorkCenter.Declare(String)
+V.Local.sLaborPart.Declare(String)
+V.Local.sFiller1.Declare(String)
+V.Local.sFiller2.Declare(String)
+V.Local.iC.Declare(Long)
+
+f.intrinsic.Control.If(v.Screen.Form2!ddlMainWO.Text.trim,=,"")
+	f.intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+
+F.Data.DataTable.CreateFromSQL("WOHEAD", "Conx", "Select Job+'-'+Suffix as JobSuff, 'Y' as Custom from V_Job_Header where Left(PART,2) = 'C1' or Left(Part, 2) = 'C2'", True)
+F.Data.Dictionary.CreateFromDataTable("CustomCheck", "WOHEAD", "JobSuff", "Custom")
+F.Data.Dictionary.SetDefaultReturn("CustomCheck", "")
+
+F.Data.DataTable.AddColumn("ProNest", "CustomWO", "String")
+F.Data.DataTable.FillFromDictionary("ProNest", "CustomCheck", "WO#", "CustomWO")
+
+F.Data.Dictionary.Close("CustomCheck")
+F.Data.DataTable.Close("WOHEAD")
+
+'Update process boolean
+V.Global.bProcess.Set(True)
+F.Intrinsic.Control.If(V.Global.iErrorCount,>,0)
+	F.Intrinsic.UI.Msgbox("Errors must be cleared!","FlexSchedule Error")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.endIf
+Gui.Form2.cmdProcess.Enabled(False)
+Gui.Form2.cmdRefresh.Enabled(False)
+F.Intrinsic.Control.CallSub(cmdupmaterial_click)
+'Gui.Form2.cmdRouterMaterial.Enabled(False)
+'Create a Flex Schedule
+Gui.Form2..Enabled(False)
+'Get the Flex Schedule Number
+V.Local.sFlexNum.Set(V.Screen.Form2!txtFlexSched.Text)
+F.Intrinsic.String.Split(V.Local.sFlexNum,"-",V.Local.sFlexNum)
+'Redim to get at least two records in the array
+V.Local.sFlexNum.RedimPreserve(0,1)
+F.Intrinsic.Control.For(V.Local.iC,0,V.DataView.ProNest!Nest.RowCount--,1)
+	'Get required information for the Flex Schedule
+	V.Local.sWO.Set(V.DataView.ProNest!Nest(V.Local.iC).WO#!FieldValTrim)
+	'Split work order up into Job and Suffix
+	F.Intrinsic.String.Split(V.Local.sWO,"-",V.Local.sWO)
+	'Query for the WO Sequence
+'	F.Intrinsic.Control.If(V.DataView.ProNest!Nest(V.Local.iC).CustomWO!FiedlValTrim, =, "Y")
+'		F.Intrinsic.String.Build("SELECT SEQ FROM V_JOB_OPERATIONS WHERE  JOB = '{0}' AND SUFFIX = '{1}' AND LMO = 'M' and Part = '{2}'",V.Local.sWO(0),V.Local.sWO(1),V.DataView.ProNest!Nest(V.Local.iC).Part!FieldValTrim,V.Local.sSQL)	
+'	F.Intrinsic.Control.Else	
+		F.Intrinsic.String.Build("SELECT SEQ FROM V_JOB_OPERATIONS WHERE  JOB = '{0}' AND SUFFIX = '{1}' AND LMO = 'M' and Part = '{2}'",V.Local.sWO(0),V.Local.sWO(1),V.DataView.ProNest!Nest(V.Local.iC).RawMaterial!FieldValTrim,V.Local.sSQL)
+'	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstSeq",V.Local.sSQL)
+	'Check to make sure a record was returned
+	
+	F.Intrinsic.Control.If(V.ODBC.Conx!rstSeq.EOF,<>,True)
+		V.Local.sSeq.Set(V.ODBC.Conx!rstSeq.FieldValTrim!SEQ)
+		'This may be an error. I think it needs the row number parameter. FEQ
+		F.Data.DataView.SetValue("ProNest", "Nest",v.Local.iC, "WOSeq", V.Local.sSeq)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Work Order {0}-{1} not found in Job Operations", V.Local.sWO(0), V.Local.sWO(1), V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.EndIf
+	'Close Recordset
+	F.ODBC.Conx!rstSeq.Close
+	'Query for the next Labor Sequence
+	F.Intrinsic.String.Build("SELECT JOB,SUFFIX,SEQ,PART  FROM V_JOB_OPERATIONS WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQ > '{2}' AND LMO = 'L' ORDER BY SEQ ASC",V.Local.sWO(0),V.Local.sWO(1),V.Local.sSeq,V.Local.sSQL)
+	F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstLab",V.Local.sSQL)
+	'Check to make sure we've got a record, first record should be the next Labor sequence in the WO
+	F.Intrinsic.Control.If(V.ODBC.Conx!rstLab.EOF,<>,True)
+		V.Local.sLabJob.Set(V.ODBC.Conx!rstLab.FieldValTrim!Job)
+		V.Local.sLabSuf.Set(V.ODBC.Conx!rstLab.FieldValTrim!Suffix)
+		V.Local.sLabSeq.Set(V.ODBC.Conx!rstLab.FieldValTrim!SEQ)
+		V.Local.sWorkCenter.Set(V.ODBC.Conx!rstLab.FieldValTrim!PART)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conx!rstLab.Close
+	'Beginning and ending date fillers
+	V.Local.sFiller2.Set("000000999999")
+	'might need a check here
+	V.Local.sLaborPart.Set(V.DataView.ProNest!Nest(V.Local.iC).PART!FieldValTrim)
+	'Format the required fields
+	F.Intrinsic.String.LPad(V.Local.sFlexNum(0)," ",6,V.Local.sFlexNum(0))
+	F.Intrinsic.String.LPad(V.Local.sFlexNum(1)," ",3,V.Local.sFlexNum(1))
+	F.Intrinsic.Math.Add(V.Local.iC, 1, V.Local.sSchedIncr)
+	F.Intrinsic.String.LPad(V.Local.sSchedIncr,"0",6,V.Local.sSchedIncr)
+	F.Intrinsic.String.RPad(V.Local.sWO(0)," ",6,V.Local.sWO(0))
+	F.Intrinsic.String.RPad(V.Local.sWO(1)," ",3,V.Local.sWO(1))
+	F.Intrinsic.String.RPad(V.Local.sSeq," ",6,V.Local.sSeq)
+	F.Intrinsic.String.RPad(V.Local.sLabJob," ",6,V.Local.sLabJob)
+	F.Intrinsic.String.RPad(V.Local.sLabSuf," ",3,V.Local.sLabSuf)
+	F.Intrinsic.String.RPad(V.Local.sLabSeq," ",6,V.Local.sLabSeq)
+	F.Intrinsic.String.RPad(V.Local.sFiller2, " ", 37, V.Local.sFiller1)
+	F.Intrinsic.String.RPad(V.Local.sWorkCenter, " ", 4, V.Local.sWorkCenter)
+	F.Intrinsic.String.RPad(V.Local.sLaborPart, " ", 20, V.Local.sLaborPart)
+	'Begin building upload record
+	F.Intrinsic.String.Build("{0}{1}{2}{3}{4}{5}",V.Local.sFlexNum(0),V.Local.sFlexNum(1),V.Local.sSchedIncr,V.Local.sWO(0),V.Local.sWO(1),V.Local.sSeq, V.Local.sRow)
+	'Pad the row to 35 characters to enter in Labor information
+	F.Intrinsic.String.RPad(V.Local.sRow," ",35,V.Local.sRow)
+	'Add Labor WO info
+	F.Intrinsic.String.Build("{0}{1}{2}{3}{4}",V.Local.sRow,V.Local.sLabJob,V.Local.sLabSuf,V.Local.sLabSeq,V.Local.sFiller1, V.Local.sRow)
+	'Add Labor Work stuff
+	F.Intrinsic.String.Build("{0}{1}{2}{3}", V.Local.sRow, V.Local.sWorkCenter, V.Local.sLaborPart, V.Global.sLoc, V.Local.sRow)	
+	'Pad the remaining fields
+	F.Intrinsic.String.RPad(V.Local.sRow," ",116,V.Local.sRow)
+	F.Intrinsic.String.Build("{0}{1}", V.Local.sRow, V.Local.sFiller2, V.Local.sRow)
+	'Add to File String
+	F.Intrinsic.Control.If(V.Local.sUpload.Trim,=,"")
+		V.Local.sUpload.Set(V.Local.sRow)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sUpload,V.Ambient.NewLine,V.Local.sRow,V.Local.sUpload)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iC)
+'Build the filepath string
+F.Intrinsic.String.Build("{0}\SCHED.TXT",V.Caller.FilesDir,V.Local.sFile)
+'Create File
+
+F.Intrinsic.Debug.Stop
+
+F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sUpload)
+'Call 1Shot
+F.Global.General.CallWrapperSync(50, "UPLSCHED/U")
+''''''''''''''''I think this is supposed to build the flex schedule?
+
+'F.Intrinsic.Control.CallSub(Pronest_check)
+F.Intrinsic.Control.If(V.Args.DNE,<>,True)
+'	Gui.Form2.cmdIssueMat.Enabled(True)
+'	Gui.Form2.cmdReverse.Enabled(True)
+'	Gui.Form2.cmdPrint.Enabled(True)
+F.Intrinsic.Control.Else
+'	Gui.Form2.cmdProcess.Enabled(True)
+'	Gui.Form2.cmdRouterMaterial.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Debug.InvokeDebugger
+
+F.Intrinsic.Control.CallSub(cmdissuemat_click)
+'log process information to custom database
+f.Intrinsic.String.Build("INSERT INTO GCG_4138_ProcHist (FLEX_SCHD,MAIN_WO,TOT_RUN_QTY,PROCESSED_BY) VALUES ('{0}','{1}',{2},'{3}')",v.Screen.Form2!txtFlexSched.text,v.Screen.Form2!ddlMainWO.text,v.Screen.Form2!txtTotalRun.text,v.caller.user,v.Local.sSQL)
+F.ODBC.Connection!Conx.Execute(v.Local.sSQL)
+
+Gui.Form2..Enabled(True)
+Gui.Form2.CmdExport.Enabled(True)
+gui.Form2.cmdPrint.Enabled(True)
+Gui.Form2.cmdReverse.Enabled(True)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdprocess_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdprocess_click.End
+
+Program.Sub.Error_CompOnJob.Start
+F.Intrinsic.Control.SetErrorHandler("Error_CompOnJob_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+'validation checks - check component
+
+Function.Intrinsic.Debug.Stop
+
+
+F.intrinsic.string.Build("Select ROUTER from JOB_OPERATIONS where ROUTER = '{0}'",V.Args.Part,V.Local.ssql)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.ssql)
+F.Intrinsic.Control.If(V.ODBC.Conx!rst.EOF,=,True)
+'	F.Intrinsic.Control.CallSub(Adderror,"Row",V.Args.Row,"Error","1")
+F.Intrinsic.Control.Else
+'	F.Intrinsic.Control.CallSub(Removeerror,"Row",V.Args.Row,"Error","1")
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rst.Close
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Error_CompOnJob_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Error_CompOnJob.End
+
+Program.Sub.RemoveError.Start
+F.Intrinsic.Control.SetErrorHandler("RemoveError_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sErrorList.Declare(String)
+V.Local.bRet.Declare(Boolean)
+V.Local.iCount.Declare(Long)
+'Get the error list and check to see if the error is already in the string
+V.Local.sErrorList.Set(V.DataView.ProNest!Nest(v.Args.Row).Error!FieldValTrim)
+F.Intrinsic.String.Build("{0},", v.Local.sErrorList, v.Local.sErrorList)
+F.Intrinsic.String.IsInString(V.Local.sErrorList,V.Args.Error,True,V.Local.bRet)
+'If it isn't already in the string do nothing
+F.Intrinsic.Control.If(V.Local.bRet,=,True)
+	'Load String into UDT to remove the error
+	F.Data.DataTable.CreateFromString("Error", v.Local.sErrorList, "Errors","String", "*!*", ",")
+	F.Data.Dictionary.CreateFromDataTable("DicError", "Error", "Errors", "Errors", 4)
+	F.Data.Dictionary.RemoveItem("DicError", V.Args.Error)
+	F.Data.Dictionary.ReturnAllPairs("DicError", v.Local.sErrorList)
+	F.Intrinsic.String.Split(v.Local.sErrorList, "!*!", v.Local.sErrorList)
+	F.Intrinsic.String.Replace(v.Local.sErrorList, "*", "", v.Local.sErrorList)
+	'Split the string at the comma
+	F.Intrinsic.String.Split(V.Local.sErrorList,"!",V.Local.sErrorList)
+	'Sort array so that it's in ascending order
+	F.Intrinsic.String.SortAsc(V.Local.sErrorList,V.Local.sErrorList)
+	'Recombine string
+	F.Intrinsic.String.Join(V.Local.sErrorList,",",V.Local.sErrorList)
+	'Now set the new list to the text matrix
+	F.Data.DataView.SetValue("ProNest", "Nest", V.Args.Row, "Error", V.Local.sErrorList)
+	'Add one to the number of errors
+	F.Intrinsic.Math.Sub(V.Global.iErrorCount,1,V.Global.iErrorCount)
+	F.Data.Dictionary.close("DicError")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("RemoveError_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.RemoveError.End
+
+Program.Sub.ProNest_Check.Start
+F.Intrinsic.Control.SetErrorHandler("ProNest_Check_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sFlexNum.Declare(String)
+V.Local.sProNestNum.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+v.Local.sCustom.Declare(String)
+v.Local.sSuffix.Declare(String)
+V.Local.bRet.Declare(Boolean)
+V.Local.bDNE.Declare(Boolean,False)
+V.Local.sFlexNum.Set(V.DataView.ProNest!Nest(0).JobNumber!FieldValTrim)
+'ChecktoseeiftheFlexnumberhas
+F.Intrinsic.String.IsInString(V.Local.sFlexNum,"-",False,V.Local.bRet)
+F.Intrinsic.Control.If(V.Local.bRet,=,True)
+	'Split to get the Flex Number and Flex Sequence
+	F.Intrinsic.String.Split(V.Local.sFlexNum,"-",V.Local.sFlexNum)
+F.Intrinsic.Control.ElseIf(V.Local.sFlexNum.Length,>,6)
+	'Use limit split to get the first six and last three
+	F.Intrinsic.String.LimitSplit(V.Local.sFlexNum,6,V.Local.sFlexNum)
+F.Intrinsic.Control.EndIf
+'Redim to get at least two records in the array
+V.Local.sFlexNum.RedimPreserve(0,1)
+F.Intrinsic.String.Left(v.Local.sFlexNum(0), 1, v.Local.sCustom)
+F.Intrinsic.String.LPad(v.Local.sFlexNum(0), "0", 6, v.Local.sFlexNum(0))
+F.Intrinsic.String.LPad(v.Local.sFlexNum(1), "0", 3, v.Local.sFlexNum(1))
+F.Intrinsic.Control.If(v.Local.sCustom.UCase, =, "C")
+	F.Intrinsic.Control.If(V.Local.sFlexNum(0).Length,>,6,"AND",V.Local.sFlexNum(1).Length,>,3)
+		F.Intrinsic.UI.Msgbox("ProNest Number is too large. Must be maximum of 6 characters.")
+		F.Intrinsic.Control.CallSub(Form2_unload)
+	F.Intrinsic.Control.EndIf
+'	F.Intrinsic.String.LPad(V.Local.sFlexNum(0),"0",6,V.Local.sFlexNum(0))
+'	F.Intrinsic.String.RPad(V.Local.sFlexNum(1)," ",3,V.Local.sFlexNum(1))
+	F.Intrinsic.String.Build("{0}-{1}",V.Local.sFlexNum(0),V.Local.sFlexNum(1),V.Local.sProNestNum)
+	F.Intrinsic.String.Build("Select IssueMatFlag from GCG_4138_ProNest where ProNest_Num = '{0}'",V.Local.sProNestNum,V.Local.sSql)
+	F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstIssue",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.Conx!rstIssue.EOF,=,False)
+		F.Intrinsic.Control.If(V.ODBC.Conx!rstIssue.FieldValTrim!IssueMatFlag,=,"N")
+			F.Intrinsic.UI.Msgbox("FlexSchedule Created!  Use Shop Floor Control > Transaction > Issue Material to Schedule")
+			F.Intrinsic.Control.CallSub(Form2_unload)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conx!rstIssue.Close
+	'check to see if the number has been used before
+	F.Intrinsic.String.Build("Select * From Job_CT_FLX_Schd where Schedule = '{0}' and Schedule_Suffix = '{1}'",V.Local.sFlexNum(0),V.Local.sFlexNum(1),V.Local.sSql)
+	F.ODBC.Connection!Conx.ExecuteAndReturn(V.Local.sSql,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,!=,"","AND",V.Global.bValidate,=,False)
+		F.Intrinsic.UI.Msgbox("ProNest Number is already tied to a FlexSchedule!")
+		F.Intrinsic.Control.CallSub(Form2_unload)
+	'Check to see if the pronest number exists after the process button has been clicked. If it hasn't then they cannot move forward with issuing materials
+	F.Intrinsic.Control.ElseIf(V.Local.sRet,=,"","AND",V.Global.bValidate,=,True)
+		V.Local.bDNE.Set(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	'get the largest suffix
+	F.Intrinsic.String.Build("Select Top 1 Schedule_Suffix From Job_CT_FLX_Schd where Schedule = '{0}' Order by Schedule, Schedule_Suffix desc",V.Local.sFlexNum(0),V.Local.sSql)
+	F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstFlex", v.Local.sSql)
+	F.Intrinsic.Control.If(v.ODBC.Conx!rstFlex.EOF, =, False)
+		'add 1
+		f.Intrinsic.Math.Add(v.ODBC.Conx!rstFlex.FieldVal!Schedule_Suffix, 1, v.Local.sSuffix)
+		F.Intrinsic.String.LPad(v.Local.sSuffix, "0",3,v.Local.sFlexNum(1))
+		'check if it is 999
+		F.Intrinsic.Control.If(v.Local.sFlexNum(1), =, "999")
+			F.Intrinsic.UI.Msgbox("Suffix 999 reached!  Purge to History.", "Purge to History")
+		F.Intrinsic.Control.EndIf	
+	F.Intrinsic.Control.Else
+		'Not found so use 000
+		F.Intrinsic.String.RPad(V.Local.sFlexNum(1).Trim,"0",3,V.Local.sFlexNum(1))
+		'v.Local.sFlexNum(1).Set("000")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("{0}-{1}",V.Local.sFlexNum(0),V.Local.sFlexNum(1),V.Local.sProNestNum)
+	f.ODBC.Conx!rstFlex.Close
+F.Intrinsic.Control.EndIf
+'Add return variable that notifies whether the schedule has been created or not
+
+'F.Intrinsic.Debug.InvokeDebugger
+
+F.Intrinsic.Variable.AddRV("DNE",V.Local.bDNE)
+Gui.Form2.txtNestingNo.Text(V.Local.sProNestNum)
+Gui.Form2.txtFlexSched.Text(V.Local.sProNestNum)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("ProNest_Check_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Form2_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.ProNest_Check.End
+
+Program.Sub.txtrawmaterial_click.Start
+F.Intrinsic.Control.SetErrorHandler("txtrawmaterial_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+Gui.Form2.txtRawMaterial.Enabled(False)
+F.Intrinsic.Control.If(V.Global.iSupplyDemand,!=,-1)
+	Gui.Form2.gsfgProNest.GSGOverrideProperty(1,V.Global.iSupplyDemand,"BackColor",V.Color.White)
+	V.Global.iSupplyDemand.Set(-1)
+F.Intrinsic.Control.EndIf
+Gui.Form2.txtRawMaterial.BackColor(V.Color.SEC-GSS-01)
+Gui.Form2.txtRawMaterial.Enabled(True)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("txtrawmaterial_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Form2_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.txtrawmaterial_click.End
+
+Program.Sub.Error_WONotFound.Start
+F.Intrinsic.Control.SetErrorHandler("Error_WONotFound_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+'If No work order was found add error, otherwise remove error if it exists
+F.Intrinsic.Control.If(V.Args.Found,<>,True)
+	F.Intrinsic.Control.CallSub(Adderror,"Row",V.Args.Row,"Error","5")
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(Removeerror,"Row",V.Args.Row,"Error","5")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Error_WONotFound_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4138_ProNest.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Error_WONotFound.End
+
+Program.Sub.cmdRouterMaterial_Click.Start
+v.Local.sSql.Declare(String)
+v.Local.sRouter.Declare(String)
+v.Local.sJob.Declare(String)
+v.Local.sDescription.Declare(String)
+v.Local.iCount.Declare(Long)
+v.Local.iInnerCount.Declare(Long)
+
+F.Intrinsic.Control.For(V.Local.iCount,0,V.DataView.ProNest!Nest.RowCount--,1)
+	'get job number
+	v.Local.sJob.Set(v.DataView.ProNest!Nest(V.Local.iCount).WO#!FieldValTrim)
+	F.Intrinsic.String.Split(v.Local.sJob, "-", v.Local.sJob)
+	v.Local.sJob.RedimPreserve(0,1)
+	'Get the Router on the work order
+	F.Intrinsic.String.Build("Select Router from Job_Header where Job = '{0}' and Suffix = '{1}'", v.Local.sJob(0), v.Local.sJob(1), v.Local.sSql)
+	F.ODBC.Connection!Conx.ExecuteAndReturn(v.Local.sSql, v.Local.sRouter)
+	F.Intrinsic.String.Split(v.Local.sRouter, "#$#", v.Local.sRouter)
+	F.Intrinsic.String.RPad(v.Local.sRouter, " ", 20, v.Local.sRouter)
+	v.Local.sRouter.RedimPreserve(0,1)
+	F.Intrinsic.String.Left(v.Local.sRouter, 17, v.Local.sRouter(0))
+	F.Intrinsic.String.Right(v.Local.sRouter, 3, v.Local.sRouter(1))
+	'get the Material lines from the router
+	F.Intrinsic.String.Build("select Part_WC_OutSide, Line_Router from Router_Line where Router = '{0}' and Router_Suffix = '{1}' and LMO = 'M' and Router_Type = 'L' order by Line_Router asc", v.Local.sRouter(0), v.Local.sRouter(1), v.Local.sSql)
+	F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstRouter",v.Local.sSql)
+	F.Intrinsic.Control.DoUntil(v.ODBC.Conx!rstRouter.EOF, =, True)
+		'Get the Part Description
+		F.Intrinsic.String.Build("Select Description from Inventory_Mstr where Part = '{0}'", V.ODBC.Conx!rstRouter.FieldValTrim!Part_WC_OutSide, v.Local.sSql)
+		F.ODBC.Connection!Conx.ExecuteAndReturn(v.Local.sSql, v.Local.sDescription)
+		F.Intrinsic.String.Split(v.Local.sDescription, "#$#", v.Local.sDescription)
+		'update the Part information
+		F.Intrinsic.String.Build("Update Job_Operations Set Part = '{3}', Description = '{4}' where Job = '{0}' and suffix = '{1}' and Router_Seq = '{2}'", v.Local.sJob(0), v.Local.sJob(1), v.ODBC.Conx!rstRouter.FieldValTrim!Line_Router,V.ODBC.Conx!rstRouter.FieldValTrim!Part_WC_Outside,v.Local.sDescription.PSQLFriendly,v.Local.sSql)
+		F.ODBC.Connection!Conx.Execute(v.Local.sSql)
+		F.ODBC.Conx!rstRouter.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.Conx!rstRouter.Close
+F.Intrinsic.Control.Next(v.Local.iCount)
+'Gui.Form2.cmdProcess.Enabled(False)
+'Gui.Form2.cmdUpMaterial.Enabled(True)
+'Gui.Form2.cmdRouterMaterial.Enabled(False)
+Program.Sub.cmdRouterMaterial_Click.End
+
+Program.Sub.cmdUpMaterial_Click.Start
+v.Local.sSql.Declare(String)
+v.Local.iCount.Declare(String)
+v.Local.sJob.Declare(String)
+v.Local.sDescription.Declare(String)
+v.Local.sPart.Declare(String)
+v.Local.iLength.Declare(Long)
+F.Intrinsic.String.Split("4,4,4,4,4", ",", v.Local.iLength)
+f.Intrinsic.String.LimitSplit(v.DataView.ProNest!Nest(0).RawMaterial!FieldValTrim,v.Local.iLength, True,v.Local.sPart) 
+v.Local.sPart.RedimPreserve(0, 4)
+F.Intrinsic.String.Build("Select Description from Inventory_Mstr where Part = '{0}'", v.DataView.ProNest!Nest(0).RawMaterial!FieldValTrim, v.Local.sSql)
+F.ODBC.Connection!Conx.ExecuteAndReturn(v.Local.sSql, v.Local.sDescription)
+F.Intrinsic.String.Split(v.Local.sDescription, "#$#", v.Local.sDescription)
+'update material seq to nest material
+F.Intrinsic.Control.For(V.Local.iCount,0,V.DataView.ProNest!Nest.RowCount--,1)
+	v.Local.sJob.Set(v.DataView.ProNest!Nest(V.Local.iCount).WO#!FieldValTrim)
+	F.Intrinsic.String.Split(v.Local.sJob, "-", v.Local.sJob)
+	v.Local.sJob.RedimPreserve(0,1)
+	F.Intrinsic.String.Build("Update Job_Operations Set Description = '{2}', Part = '{3}' where Job = '{0}' and Suffix = '{1}' and Seq < '900000' and LMO = 'M'", v.Local.sJob(0), v.Local.sJob(1), v.Local.sDescription,v.DataView.ProNest!Nest(0).RawMaterial!FieldValTrim , v.Local.sSql)
+	F.ODBC.Connection!Conx.Execute(v.Local.sSql)
+F.Intrinsic.Control.Next(v.Local.iCount)
+'Gui.Form2.cmdProcess.Enabled(True)
+'gui.Form2.cmdRouterMaterial.Enabled(True)
+'Gui.Form2.cmdUpMaterial.Enabled(False)
+Program.Sub.cmdUpMaterial_Click.End
+
+Program.Sub.txtTotalRun_LostFocus.Start
+v.Local.iCount.Declare(Long)
+v.Local.fQty.Declare(Float)
+v.Local.fTotal.Declare(Float)
+V.Local.fTotalLbs.Declare(Float)
+V.Local.fTotalQty.Declare(Float)
+V.Local.fQtyNestTtl.Declare(Float)
+V.Local.fQtyInLbs.Declare(Float)
+V.Local.ftotalonhandqty.Declare(Float)
+V.Local.ftotalrunqty.Declare(Float)
+V.Local.iRoof.Declare(Long)
+V.Local.fResidue.Declare(Float)
+
+'F.Intrinsic.Debug.Stop
+
+Gui.Form2..Enabled(False)
+
+F.Intrinsic.Control.For(V.Local.iCount,0,V.DataView.ProNest!Nest.RowCount--,1)
+	F.Intrinsic.Math.Mult(v.DataView.ProNest!Nest(v.Local.iCount).QtyNestOrig!FieldValFloat, v.Screen.Form2!txtTotalRun.Text, v.Local.fQty)
+	F.Data.DataView.SetValue("ProNest", "Nest", V.Local.iCount, "QtyNest", V.Local.fQty)
+	Gui.Form2.gsgcNest.MainView("GridNest")
+'	F.Intrinsic.Control.CallSub(error_runqtymismatch,"Row" ,v.Local.iCount)
+F.Intrinsic.Control.Next(v.Local.iCount)
+
+'The Expression columns were not recalculating properly so we set/unset the filter to reset them
+F.Data.DataView.SetFilter("ProNest", "Nest", "[JobNumber] = 'Strider'")
+F.Data.DataView.SetFilter("ProNest", "Nest", "[JobNumber] <> 'Strider'")
+Gui.Form2.gsgcNest.MainView("GridNest")
+
+F.Data.DataTable.Compute("ProNest", "SUM(RMISSUESH)", "", V.Local.fTotalQty)
+F.Data.DataTable.Compute("ProNest", "SUM(CALCPARTWEIGHT)", "", V.Local.fTotalLbs)
+F.Data.DataTable.Compute("ProNest", "SUM(QTYNEST)", "", V.Local.fQtyNestTtl)
+
+'I am unsure of which Total LBS they want it stored in
+F.Intrinsic.Math.Round(V.Local.fTotalLbs, 4, V.Local.fTotalLbs)
+Gui.Form2.txtTotalLbs.Text(V.Local.fTotalLbs)
+Gui.Form2.txtTotalLbsGSS.Text(V.Local.fTotalLbs)
+F.Intrinsic.Math.Mult(V.Local.fTotalLbs, V.Global.fLbsToSheet, V.Local.fTotalQty)
+F.Intrinsic.Math.Ceiling(V.Local.fTotalQty, V.Local.iRoof)
+Gui.Form2.txtToIssue.Text(V.Local.iRoof)
+Gui.Form2.txtTotalRunGSS.Text(V.Local.fQtyNestTtl)
+'Gui.Form2.txtTotal.Text(V.Local.fTotalQty)
+
+F.Intrinsic.Math.Sub(V.Local.iRoof, V.Local.fTotalQty, V.Local.fResidue)
+F.Intrinsic.Math.Round(V.Local.fResidue, 4, V.Local.fResidue)
+'F.Data.DataView.SetValue("ProNest", "Nest", V.DataView.ProNest!Nest.RowCount--, "ScrapCalc", V.Local.fResidue)
+
+F.Intrinsic.Math.Mult(V.Local.fResidue, V.Global.fSheetToLbs, V.Local.fResidue)
+F.Intrinsic.Math.Round(V.Local.fResidue, 4, V.Local.fResidue)
+
+V.Local.fTotal.Set(V.Screen.Form2!txtTotalRun.Text)
+V.Local.fResidue.Set(V.DataView.Pronest!Nest(V.DataView.ProNest!Nest.RowCount--).ScrapCalc!FieldValFloat)
+F.Intrinsic.Math.Mult(V.Local.fTotal, V.Local.fResidue, V.Local.fResidue)
+F.Intrinsic.Math.Mult(V.Local.fResidue, V.Global.fSheetToLbs, V.Local.fResidue)
+Gui.Form2.txtToScrap.Text(V.Local.fResidue)
+
+F.Intrinsic.Control.CallSub(cmdrefresh_click)
+
+F.Intrinsic.Math.Mult(V.Global.fTotalOnHand, V.Global.fSheetToLbs, V.Global.fTotalOHLbs)
+
+F.Intrinsic.Control.For(V.Local.iCount,0,V.DataView.ProNest!Nest.RowCount--,1)
+
+	F.Intrinsic.Math.Mult(V.DataView.Pronest!Nest(V.Local.iCount).ISH!FieldValTrim, V.Global.fSheetToLbs, V.Local.fQtyInLbs)
+	F.Intrinsic.Math.Add(V.Local.fQtyInLbs, V.Local.ftotalrunqty, V.Local.ftotalrunqty)
+
+	F.Intrinsic.Math.Sub(V.Global.fTotalOHLbs,V.Local.ftotalrunqty,V.Local.ftotalonhandqty)
+	F.Intrinsic.Control.CallSub(Error_insufficientonhand,"Row",V.Local.iCount,"RunTotal",V.Local.ftotalonhandqty)
+
+F.Intrinsic.Control.Next(v.Local.iCount)
+
+Gui.Form2..Enabled(True)
+
+Program.Sub.txtTotalRun_LostFocus.End
+
+Program.Sub.cmdPrint_Click.Start
+v.Local.sWorkOrder.Declare(String)
+v.Local.sSql.Declare(String)
+v.Local.sParam.Declare(String)
+v.Local.iCount.Declare(Long)
+'Loop and set the Release Flagn
+
+'F.Intrinsic.Debug.InvokeDebugger
+
+F.Intrinsic.Debug.Stop
+
+F.Intrinsic.Control.For(V.Local.iCount,0,V.DataView.ProNest!Nest.RowCount--,1)
+	v.Local.sWorkOrder.set(v.DataView.ProNest!Nest(v.Local.iCount).WO#!FieldValTrim)
+	F.Intrinsic.String.Split(v.Local.sWorkOrder, "-", v.Local.sWorkOrder)
+	v.Local.sWorkOrder.RedimPreserve(0,1)
+	F.Intrinsic.String.Build("Update Job_Header Set Flag_WO_Prtd = '{0}' where Job = '{1}' and Suffix = '{2}'", "R", v.Local.sWorkOrder(0), v.Local.sWorkOrder(1), v.Local.sSql)
+	F.ODBC.Connection!Conx.Execute(v.Local.sSql)
+F.Intrinsic.Control.Next(v.Local.iCount)
+v.Local.sWorkOrder.set(v.DataView.ProNest!Nest(0).JobNumber!FieldValTrim)
+F.Intrinsic.String.Split(v.Local.sWorkOrder, "-", v.Local.sWorkOrder)
+v.Local.sWorkOrder.RedimPreserve(0,1)
+F.Intrinsic.String.Build("{0}!*!{0}!*!{1}!*!{2}!*!{1}!*!{2}!*!N!*!Y", v.Ambient.Date, v.Local.sWorkOrder(0), v.Local.sWorkOrder(1), v.Local.sParam)
+F.Global.General.CallWrapperSync(900300,v.Local.sParam) 
+Program.Sub.cmdPrint_Click.End
+
+Program.Sub.MarchMods.Start
+V.Local..BulkDeclareString(sRawPart, sLoc, sSql)
+V.Local.fConCon.Declare(Float)
+V.Local.fTotalLbs.Declare(Float)
+V.Local.fTotalQty.Declare(Float)
+
+F.Intrinsic.Debug.Stop
+
+V.Local.sRawPart.Set(V.Screen.Form2!txtRawMaterial.Text)
+V.Local.sLoc.Set(V.Screen.Form2!txtLoc.Text)
+F.Intrinsic.String.Build("Select TOP 1 Consump_conv from Inventory_Mst3 where PART = '{0}' and LOCATION = '{1}'", V.Local.sRawPart.Trim, V.Local.sLoc.Trim, V.Local.sSql)
+F.ODBC.Connection!Conx.ExecuteAndReturn(V.Local.sSql, V.Local.fConCon)
+F.Intrinsic.Control.If(V.Local.fConCon, <>, 0)
+	F.Intrinsic.Math.Div(1, V.Local.fConCon, V.Local.fConCon)
+F.Intrinsic.Control.Else
+	V.Local.fConCon.Set(1)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("[CalcPartWeight]*{0}", V.Local.fConCon, V.Local.sSql)
+F.Data.DataTable.AddExpressionColumn("ProNest", "ISH", "Float", V.Local.sSql)
+'F.Data.DataTable.SetValueFormat("ProNest", -1, "ISH", "ISH", "#######.00000")
+
+F.Intrinsic.String.Build("[PartWeight]*{0}", V.Local.fConCon, V.Local.sSql)
+F.Data.DataTable.AddExpressionColumn("ProNest", "ISHDISPPP", "Float", V.Local.sSql)
+
+F.Data.DataTable.AddExpressionColumn("ProNest", "ISHDISP", "Float", "[ISHDISPPP]*[QTYNESTORIG]")
+
+F.Data.DataTable.Compute("ProNest", "SUM(RMQTYLB)", "", V.Local.fTotalLbs)
+F.Data.DataTable.Compute("ProNest", "SUM(RMISSUESH)", "", V.Local.fTotalQty)
+
+'I am unsure of which Total LBS they want it stored in
+F.Intrinsic.Math.Round(V.Local.fTotalLbs, 4, V.Local.fTotalLbs)
+Gui.Form2.txtTotalLbs.Text(V.Local.fTotalLbs)
+'Gui.Form2.txtTotal.Text(V.Local.fTotalQty)
+
+
+
+Program.Sub.MarchMods.End
+
+Program.Sub.PartsCompleted.Start
+V.Local..BulkDeclareString(sWC, sSql, sWO, sSuff)
+V.Local.iC.Declare(Long)
+V.Local.fUnits.Declare(Float)
+V.Local.fTotal.Declare(Float)
+
+F.Intrinsic.String.Build("{0}01", V.Global.sLoc, V.Local.sWC)
+
+'F.Intrinsic.Debug.InvokeDebugger
+
+F.Intrinsic.Debug.Stop
+
+'Here we are going to be assigning how many parts were made to the sequence with the work center is either 1001 if location 10 or 2001 if location 20
+F.Intrinsic.Control.For(V.Local.iC, 0, V.DataView.ProNest!Nest.RowCount--,1)
+	V.Local.fUnits.Set(V.DataView.ProNest!Nest(V.Local.iC).QTYNEST!FieldVal)
+	V.Local.sWO.Set(V.DataView.ProNest!Nest(V.Local.iC).WO#!FieldVal)
+	F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+'	V.Local.sSql.Set("UPDATE JOB_OPERATIONS_WC SET FLAG_CLOSED = 'Y', UNITS_COMPLETE = ")
+'	F.Intrinsic.String.Build("{0}'{1}' where WORKCENTER = '{2}' and JOB = '{3}' and SUFFIX = '{4}' ", V.Local.sSql, V.Local.fUnits, V.Local.sWC, V.Local.sWO(0), V.Local.sWO(1), V.Local.sSql)
+'	F.ODBC.Connection!Conx.Execute(V.Local.sSql)
+	V.Local.sSql.Set("Select FLAG_CLOSED, UNITS_COMPLETE, UNITS_OPEN from JOB_OPERATIONS_WC where ")
+	F.Intrinsic.String.Build("{0}WORKCENTER = '{1}' and JOB = '{2}' and SUFFIX = '{3}' ", V.Local.sSql, V.Local.sWC, V.Local.sWO(0), V.Local.sWO(1), V.Local.sSql)
+	F.ODBC.Connection!Conx.OpenLocalRecordsetRW("closerst", V.Local.sSql)
+	F.Intrinsic.Control.DoUntil(V.ODBC.Conx!closerst.EOF, =, True)
+		F.Intrinsic.Math.Add(V.ODBC.Conx!closerst.FieldValLong!UNITS_COMPLETE, V.Local.fUnits, V.Local.fTotal)
+		F.Intrinsic.Control.If(V.ODBC.Conx!closerst.FieldValLong!UNITS_OPEN, <=, V.Local.fTotal)
+			F.ODBC.Conx!closerst.Set!FLAG_CLOSED("Y")
+		F.Intrinsic.Control.EndIf
+		F.ODBC.Conx!closerst.Set!UNITS_COMPLETE(V.Local.fTotal)
+		F.ODBC.Conx!closerst.Update	
+		F.ODBC.Conx!closerst.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.Conx!closerst.Close
+F.Intrinsic.Control.Next(V.Local.iC)
+
+Program.Sub.PartsCompleted.End
+
+Program.Sub.ReversePartsCompl.Start
+V.Local..BulkDeclareString(sWC, sSql, sWO, sSuff)
+V.Local.iC.Declare(Long)
+V.Local.fUnits.Declare(Float)
+V.Local.fTotal.Declare(Float)
+
+'F.Intrinsic.Debug.Stop
+
+'We are undoing the parts completed that was registered when issuing material
+F.Intrinsic.String.Build("{0}01", V.Global.sLoc, V.Local.sWC)
+F.Intrinsic.Control.For(V.Local.iC, 0, V.DataView.ProNest!Nest.RowCount--, 1)
+	V.Local.fUnits.Set(V.DataView.ProNest!Nest(V.Local.iC).QTYNEST!FieldVal)
+	V.Local.sWO.Set(V.DataView.ProNest!Nest(V.Local.iC).WO#!FieldVal)
+	F.Intrinsic.String.Split(V.Local.sWO, "-", V.Local.sWO)
+'	V.Local.sSql.Set("UPDATE JOB_OPERATIONS_WC SET FLAG_CLOSED = 'Y', UNITS_COMPLETE = ")
+'	F.Intrinsic.String.Build("{0}'{1}' where WORKCENTER = '{2}' and JOB = '{3}' and SUFFIX = '{4}' ", V.Local.sSql, V.Local.fUnits, V.Local.sWC, V.Local.sWO(0), V.Local.sWO(1), V.Local.sSql)
+'	F.ODBC.Connection!Conx.Execute(V.Local.sSql)
+	V.Local.sSql.Set("Select FLAG_CLOSED, UNITS_COMPLETE, UNITS_OPEN from JOB_OPERATIONS_WC where ")
+	F.Intrinsic.String.Build("{0}WORKCENTER = '{1}' and JOB = '{2}' and SUFFIX = '{3}' ", V.Local.sSql, V.Local.sWC, V.Local.sWO(0), V.Local.sWO(1), V.Local.sSql)
+	F.ODBC.Connection!Conx.OpenLocalRecordsetRW("closerst", V.Local.sSql)
+	F.Intrinsic.Control.DoUntil(V.ODBC.Conx!closerst.EOF, =, True)
+		F.Intrinsic.Math.Sub(V.ODBC.Conx!closerst.FieldValLong!UNITS_COMPLETE, V.Local.fUnits, V.Local.fTotal)
+		F.Intrinsic.Control.If(V.ODBC.Conx!closerst.FieldValTrim!FLAG_CLOSED, =, "Y")
+			F.ODBC.Conx!closerst.Set!FLAG_CLOSED("N")
+		F.Intrinsic.Control.EndIf
+		F.ODBC.Conx!closerst.Set!UNITS_COMPLETE(V.Local.fTotal)
+		F.ODBC.Conx!closerst.Update	
+		F.ODBC.Conx!closerst.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.Conx!closerst.Close
+F.Intrinsic.Control.Next(V.Local.iC)
+
+Program.Sub.ReversePartsCompl.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$SKC$}$2/23/2017 2:55:59 PM$}$False
+Program.Sub.Comments.End
+
+d
